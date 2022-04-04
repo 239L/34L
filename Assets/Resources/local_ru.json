@@ -1,0 +1,88 @@
+﻿{
+    "items": [
+        {
+            "key": "Russian",
+            "value": "Русский"
+        },
+        {
+            "key": "English",
+            "value": "Английский"
+        },
+        {
+            "key": "Spanish",
+            "value": "Испанский"
+        },
+        {
+            "key": "Danish",
+            "value": "Датский"
+        },
+        {
+            "key": "PlayGame",
+            "value": "Играть"
+        },
+        {
+            "key": "Settings",
+            "value": "Настройки"
+        },
+        {
+            "key": "Exit",
+            "value": "Выход"
+        },
+        {
+            "key": "Resolution",
+            "value": "Разрешение"
+        },
+        {
+            "key": "Windowed",
+            "value": "В окне"
+        },
+        {
+            "key": "Language",
+            "value": "Язык"
+        },
+        {
+            "key": "Volume",
+            "value": "Громкость"
+        },
+        {
+            "key": "Master",
+            "value": "Общая громкость"
+        },
+        {
+            "key": "BGM",
+            "value": "Музыка"
+        },
+        {
+            "key": "SE",
+            "value": "Звуки"
+        },
+        {
+            "key": "Controls",
+            "value": "Управление"
+        },
+        {
+            "key": "Interact",
+            "value": "E - взаимодействовать"
+        },
+        {
+            "key": "Run",
+            "value": "Z - бегать"
+        },
+        {
+            "key": "ESC",
+            "value": "ESC - пауза"
+        },
+        {
+            "key": "Back",
+            "value": "Назад"
+        },
+        {
+            "key": "Continue",
+            "value": "Продолжить"
+        },
+        {
+            "key": "Pause",
+            "value": "Пауза"
+        }
+    ]
+}

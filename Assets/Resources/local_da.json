@@ -1,0 +1,88 @@
+﻿{
+    "items": [
+        {
+            "key": "Russian",
+            "value": "Russisk"
+        },
+        {
+            "key": "English",
+            "value": "Engelsk"
+        },
+        {
+            "key": "Spanish",
+            "value": "Spansk"
+        },
+        {
+            "key": "Danish",
+            "value": "Dansk"
+        },
+        {
+            "key": "PlayGame",
+            "value": "Spil"
+        },
+        {
+            "key": "Settings",
+            "value": "Indstillinger"
+        },
+        {
+            "key": "Exit",
+            "value": "Afslut"
+        },
+        {
+            "key": "Resolution",
+            "value": "Opløsning"
+        },
+        {
+            "key": "Windowed",
+            "value": "Vindue"
+        },
+        {
+            "key": "Language",
+            "value": "Sprog"
+        },
+        {
+            "key": "Volume",
+            "value": "Volumen"
+        },
+        {
+            "key": "Master",
+            "value": "Master"
+        },
+        {
+            "key": "BGM",
+            "value": "BGM"
+        },
+        {
+            "key": "SE",
+            "value": "Lyder"
+        },
+        {
+            "key": "Controls",
+            "value": "Tastindstillinger"
+        },
+        {
+            "key": "Interact",
+            "value": "E - interagere"
+        },
+        {
+            "key": "Run",
+            "value": "Z - løbe"
+        },
+        {
+            "key": "ESC",
+            "value": "ESC - pause"
+        },
+        {
+            "key": "Back",
+            "value": "Tilbage"
+        },
+        {
+            "key": "Continue",
+            "value": "Fortsæt"
+        },
+        {
+            "key": "Pause",
+            "value": "Pause"
+        }
+    ]
+}

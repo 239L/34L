@@ -1,0 +1,88 @@
+{
+    "items": [
+        {
+            "key": "Russian",
+            "value": "Russian"
+        },
+        {
+            "key": "English",
+            "value": "English"
+        },
+        {
+            "key": "Spanish",
+            "value": "Spanish"
+        },
+        {
+            "key": "Danish",
+            "value": "Danish"
+        },
+        {
+            "key": "PlayGame",
+            "value": "Play"
+        },
+        {
+            "key": "Settings",
+            "value": "Settings"
+        },
+        {
+            "key": "Exit",
+            "value": "Exit"
+        },
+        {
+            "key": "Resolution",
+            "value": "Resolution"
+        },
+        {
+            "key": "Windowed",
+            "value": "Windowed"
+        },
+        {
+            "key": "Language",
+            "value": "Language"
+        },
+        {
+            "key": "Volume",
+            "value": "Volume"
+        },
+        {
+            "key": "Master",
+            "value": "Master"
+        },
+        {
+            "key": "BGM",
+            "value": "BGM"
+        },
+        {
+            "key": "SE",
+            "value": "Sounds"
+        },
+        {
+            "key": "Controls",
+            "value": "Controls"
+        },
+        {
+            "key": "Interact",
+            "value": "E - interact"
+        },
+        {
+            "key": "Run",
+            "value": "Z - run"
+        },
+        {
+            "key": "ESC",
+            "value": "ESC - pause"
+        },
+        {
+            "key": "Back",
+            "value": "Back"
+        },
+        {
+            "key": "Continue",
+            "value": "Continue"
+        },
+        {
+            "key": "Pause",
+            "value": "Pause"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614c18410f4205e4e8dc3686206fb9ef, type: 3}
+  m_Name: PlayerRun
+  m_EditorClassIdentifier: 
+  name: Run
+  cooldown: 5
+  active: 5
+  speed: {fileID: 11400000, guid: 4f7fa943bb3c1c44a91794c09633ffe9, type: 2}
+  playerState: {fileID: 11400000, guid: db8615b78aad6784b99618f1acb95d7b, type: 2}
+  track: {fileID: 11400000, guid: 7ca9bce68af2c5141b66220e5c54897e, type: 2}

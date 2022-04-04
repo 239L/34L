@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objecttypes>
+ <objecttype name="Door" color="#a0a0a4"/>
+ <objecttype name="Abyss" color="#a0a0a4"/>
+ <objecttype name="Axe" color="#a0a0a4"/>
+ <objecttype name="Block" color="#a0a0a4"/>
+ <objecttype name="Box" color="#a0a0a4"/>
+ <objecttype name="Computer" color="#a0a0a4"/>
+ <objecttype name="Face" color="#a0a0a4"/>
+ <objecttype name="Gift" color="#a0a0a4"/>
+ <objecttype name="GreenGem" color="#a0a0a4"/>
+ <objecttype name="HidingSpot1" color="#a0a0a4"/>
+ <objecttype name="HidingSpot2" color="#a0a0a4"/>
+ <objecttype name="Note" color="#a0a0a4"/>
+ <objecttype name="RedButton" color="#a0a0a4"/>
+ <objecttype name="RedGem" color="#a0a0a4"/>
+ <objecttype name="Slot1" color="#a0a0a4"/>
+ <objecttype name="Slot2" color="#a0a0a4"/>
+ <objecttype name="Slot3" color="#a0a0a4"/>
+ <objecttype name="Wall" color="#a0a0a4">
+  <property name="unity:Tag" type="string" default="Wall"/>
+ </objecttype>
+ <objecttype name="Wire" color="#a0a0a4"/>
+ <objecttype name="YellowGem" color="#a0a0a4"/>
+</objecttypes>

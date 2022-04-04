@@ -1,0 +1,88 @@
+﻿{
+    "items": [
+        {
+            "key": "Russian",
+            "value": "Ruso"
+        },
+        {
+            "key": "English",
+            "value": "Inglés"
+        },
+        {
+            "key": "Spanish",
+            "value": "Español"
+        },
+        {
+            "key": "Danish",
+            "value": "Danés"
+        },
+        {
+            "key": "PlayGame",
+            "value": "Jugar"
+        },
+        {
+            "key": "Settings",
+            "value": "Ajustes"
+        },
+        {
+            "key": "Exit",
+            "value": "Salir"
+        },
+        {
+            "key": "Resolution",
+            "value": "Resolución"
+        },
+        {
+            "key": "Windowed",
+            "value": "Ventana"
+        },
+        {
+            "key": "Language",
+            "value": "Lenguaje"
+        },
+        {
+            "key": "Volume",
+            "value": "Volumen"
+        },
+        {
+            "key": "Master",
+            "value": "Master"
+        },
+        {
+            "key": "BGM",
+            "value": "BGM"
+        },
+        {
+            "key": "SE",
+            "value": "Sonidos"
+        },
+        {
+            "key": "Controls",
+            "value": "Controles"
+        },
+        {
+            "key": "Interact",
+            "value": "E - interactuar"
+        },
+        {
+            "key": "Run",
+            "value": "Z - correr"
+        },
+        {
+            "key": "ESC",
+            "value": "ESC - pausa"
+        },
+        {
+            "key": "Back",
+            "value": "Atrás"
+        },
+        {
+            "key": "Continue",
+            "value": "Continuar"
+        },
+        {
+            "key": "Pause",
+            "value": "Pausa"
+        }
+    ]
+}
