@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d88e5b958a84d4484ef4d33f1ba4bd, type: 3}
   m_Name: Language
   m_EditorClassIdentifier: 
-  value: 
+  value: RU

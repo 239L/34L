@@ -8,9 +8,10 @@ namespace NearYouNameSpace.GameInterface
     {
         [SerializeField]
         BoolValue windowed;
+
         void Awake()
         {
-
+            
         }
 
         // Update is called once per frame
