@@ -41,7 +41,7 @@ namespace NearYouNameSpace.Player{
         void Update() {
             checkState();
             movement.x = Input.GetAxisRaw("Horizontal");
-            if ((movement.x < 0 && !dirRight) || (movement.x > 0 && dirRight)) {
+            if (((movement.x < 0 && !dirRight) || (movement.x > 0 && dirRight))&&!GameInterface.Pause.isPaused) {
                 Flip();
             }
             movement.y = Input.GetAxisRaw("Vertical");

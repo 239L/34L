@@ -17,7 +17,7 @@ namespace NearYouNameSpace.Enemy
         [SerializeField]
         Vector2Value startPos;
         Transform player;
-
+        
         [SerializeField]
         AIPath ai;
 
@@ -25,9 +25,17 @@ namespace NearYouNameSpace.Enemy
         {
             var point = Random.insideUnitSphere * ai.radius;
             point.y = 0;
-            point += transform.position;
+            point += transform.parent.position;
             return point;
         }
+
+        Vector3 PickPointNearPlayer() {
+            var point = Random.insideUnitSphere * ai.radius*3;
+            point.y = 0;
+            point +=player.transform.position/1.2f;
+            return point;
+        }
+        bool collided = false;
 
         Vector2 dir;
         [SerializeField]
@@ -51,6 +59,17 @@ namespace NearYouNameSpace.Enemy
 
 
         }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            collided = true;
+            Debug.Log("col");
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            collided = false;
+        }
         void Flip()
         {
             dirRight = !dirRight;
@@ -66,29 +85,38 @@ namespace NearYouNameSpace.Enemy
         }
         void Update()
         {
+            anim.setAnim("EnemySpeed", ai.velocity.sqrMagnitude);
             if (player == null) return;
-
-            if (Vector2.Distance(transform.parent.position, player.position) > ai.radius)
+            if (Vector2.Distance(transform.parent.position, player.position) <= ai.radius)
             {
-                hit = Physics2D.Raycast(transform.parent.position, transform.parent.right, ai.radius);
-                targetSetter.enabled = false;
-                if (hit.collider.tag == "runTrack")
-                {
-                    ai.destination = hit.collider.gameObject.transform.position;
 
-                }
-                else
-                {
-                    ai.destination = PickRandomPoint();
-                    ai.SearchPath();
-                }
-
+                targetSetter.enabled = true;
             }
-            else { targetSetter.enabled = true; }
+            if (Vector2.Distance(transform.parent.position, player.position) > ai.radius * 5)
+            {
+                targetSetter.enabled = false;
+                
+                ai.Teleport(PickPointNearPlayer());
+                while (collided) {
+                    ai.Teleport(PickPointNearPlayer());
+                }
+                
+            }
+            else if (Vector2.Distance(transform.parent.position, player.position) > ai.radius)
+            {
+                
+              //hit = Physics2D.Raycast(transform.parent.position, transform.parent.right, ai.radius);
+              targetSetter.enabled = false;
+             ai.destination = PickRandomPoint();
+              ai.SearchPath();
+ 
+            }
+            
 
 
 
-            if ((ai.desiredVelocity.x > 0 && !dirRight) || (ai.desiredVelocity.x < 0 && dirRight))
+
+                if ((ai.desiredVelocity.x > 0 && !dirRight) || (ai.desiredVelocity.x < 0 && dirRight))
             {
                 Flip();
             }

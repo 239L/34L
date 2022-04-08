@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 namespace NearYouNameSpace.GameInterface
 {
     public class SettingsButton : CustomButton
