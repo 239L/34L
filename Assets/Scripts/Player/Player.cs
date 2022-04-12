@@ -26,6 +26,8 @@ namespace NearYouNameSpace.Player{
         [SerializeField]
         AnimController anim;
 
+        public bool cantMove = false;
+
         [SerializeField]
         GameObject runTrack;
         [SerializeField]
@@ -61,6 +63,7 @@ namespace NearYouNameSpace.Player{
         }
 
         void Move() {
+            if(!cantMove)
             rb.MovePosition(rb.position + movement * speed.value * Time.fixedDeltaTime);
         }
         void checkState() {

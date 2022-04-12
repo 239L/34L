@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9147336455782000858}
   - component: {fileID: 9147336455782000857}
   - component: {fileID: 9147336455782000856}
+  - component: {fileID: -4739387117885760300}
   m_Layer: 0
   m_Name: HidingSpot
   m_TagString: Interactable
@@ -98,6 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd793d3d52b71a48b14b88e5c87af2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interact: {fileID: 11400000, guid: 9f6d4a57db92be0408e082cd2a9a19d9, type: 2}
+  type: {fileID: 11400000, guid: ce782266bb74fb242b0b078adb2a2ee4, type: 2}
+  number: 0
+  compareNumber: {fileID: -4739387117885760300}
+  onInteract: {fileID: 11400000, guid: b3283705e77d5e24bbc8e4336ffaaff8, type: 2}
 --- !u!61 &9147336455782000858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -169,3 +175,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4739387117885760300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9147336455782000863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3dafc43d8980e4f889ee801fc9b20b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 0

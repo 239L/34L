@@ -15,14 +15,21 @@ namespace NearYouNameSpace.World
 
         [SerializeField]
         EnumValue type;
+
+        [SerializeField]
+        int number;
+
+        public int Number { get { return number; } }
         public EnumValue Type { get => type; }
 
+        [SerializeField] InteractingNumber compareNumber;
+        
 
         [SerializeField]
         InteractableEvent onInteract;
 
-
-
+        bool triggered = false;
+        
         private void Awake()
         {
 
@@ -30,32 +37,50 @@ namespace NearYouNameSpace.World
         // Start is called before the first frame update
         void Start()
         {
-            if (Type) onInteract.Raise(this);
+           
+            if (Type&& Type.Name!="Hide") onInteract.Raise(this);
+            triggered = false;
 
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.E) && triggered)
+            {
+                if (!compareNumber || compareNumber.Number == number)
+                {
+                    Debug.Log("Interact");
+                    Interact.Act();
+                    onInteract.Raise(this);
+                }
 
+            }
         }
 
 
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                triggered = false;
+            }
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (collision.CompareTag("Player"))
+            {
+                triggered = true;
+            }
 
         }
 
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (Input.GetKeyDown(KeyCode.E) && collision.CompareTag("Player"))
-            {
-                Debug.Log("Interact");
-                Interact.Act();
-                onInteract.Raise(this);
-
-            }
+           
         }
 
 

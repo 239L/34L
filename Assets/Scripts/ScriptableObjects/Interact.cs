@@ -10,6 +10,7 @@ namespace NearYouNameSpace.ScriptableObjects
         [SerializeField]
         string name;
 
+        
         public virtual BoolValue getBool() { return new BoolValue(); }
 
         public virtual void setBool(bool b) { }

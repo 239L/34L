@@ -77,16 +77,25 @@ namespace NearYouNameSpace.AudioManagement
         }
         public static void playBGS(BGS sound, bool loop)
         {
-            SoundAssets.Instance.BGSSource.loop = loop;
-            SoundAssets.Instance.setVolume();
-            SoundAssets.Instance.BGSSource.clip = getBGSClip(sound);
-            SoundAssets.Instance.BGSSource.Play();
+            
+                SoundAssets.Instance.BGSSource.loop = loop;
+                SoundAssets.Instance.setVolume();
+                SoundAssets.Instance.BGSSource.clip = getBGSClip(sound);
+                SoundAssets.Instance.BGSSource.Play();
+            
 
         }
 
+        public static bool isBGSPlaying() {
+            return SoundAssets.Instance.BGSSource.isPlaying;
+        }
         public static void stopBGM()
         {
             SoundAssets.Instance.BGMSource.Stop();
+        }
+
+        public static void stopBGS() {
+            SoundAssets.Instance.BGSSource.Stop();
         }
         public static AudioClip getBGSClip(BGS sound)
         {

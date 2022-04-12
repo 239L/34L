@@ -45,14 +45,24 @@ namespace NearYouNameSpace.GameInterface
         void Resume() {
 
             SaveSystem.SaveConfigData(sc);
+            
             menuPanel.SetActive(false);
             Time.timeScale = 1f;
+            if (AudioManagement.SoundAssets.Instance.BGSSource.clip)
+            {
+                AudioManagement.SoundAssets.Instance.BGSSource.UnPause();
+            }
             isPaused = false;
         }
 
         void PauseMenu() {
+            
             menuPanel.SetActive(true);
             Time.timeScale = 0f;
+            if (AudioManagement.SoundAssets.Instance.BGSSource.clip)
+            {
+                AudioManagement.SoundAssets.Instance.BGSSource.Pause();
+            }
             isPaused = true;
         }
     }

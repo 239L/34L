@@ -4,13 +4,13 @@ using UnityEngine;
 using Pathfinding;
 using NearYouNameSpace.Controllers;
 using NearYouNameSpace.ScriptableObjects;
-
+using NearYouNameSpace.Player;
 namespace NearYouNameSpace.Enemy
 {
     public class EnemyController : MonoBehaviour
     {
         public AnimController anim;
-
+        static float durationOfPursuing = 0f;
         // List<Vector2> pathTo = new List<Vector2>();
         public FloatValue EnemySpeed;
         //bool isMoving;
@@ -20,7 +20,8 @@ namespace NearYouNameSpace.Enemy
         
         [SerializeField]
         AIPath ai;
-
+        [SerializeField]
+        EnemyState state;
         Vector3 PickRandomPoint()
         {
             var point = Random.insideUnitSphere * ai.radius;
@@ -41,16 +42,25 @@ namespace NearYouNameSpace.Enemy
         [SerializeField]
         AIDestinationSetter targetSetter;
 
+        
+        
         float pos = 0.0f;
         bool dirRight = true;
         RaycastHit2D hit;
 
+        float tempSpeed = 0f;
+
         // Start is called before the first frame update
         void Start()
         {
-
+            
+            tempSpeed = EnemySpeed.value;
+            state.changeState(AIState.idle);
             pos = startPos.pos.y;
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            if (GameObject.FindGameObjectWithTag("Player"))
+            {
+                player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            }
             if (player != null)
             {
 
@@ -59,7 +69,7 @@ namespace NearYouNameSpace.Enemy
 
 
         }
-
+       
         private void OnCollisionEnter2D(Collision2D collision)
         {
             collided = true;
@@ -85,38 +95,12 @@ namespace NearYouNameSpace.Enemy
         }
         void Update()
         {
-            anim.setAnim("EnemySpeed", ai.velocity.sqrMagnitude);
             if (player == null) return;
-            if (Vector2.Distance(transform.parent.position, player.position) <= ai.radius)
-            {
-
-                targetSetter.enabled = true;
-            }
-            if (Vector2.Distance(transform.parent.position, player.position) > ai.radius * 5)
-            {
-                targetSetter.enabled = false;
-                
-                ai.Teleport(PickPointNearPlayer());
-                while (collided) {
-                    ai.Teleport(PickPointNearPlayer());
-                }
-                
-            }
-            else if (Vector2.Distance(transform.parent.position, player.position) > ai.radius)
-            {
-                
-              //hit = Physics2D.Raycast(transform.parent.position, transform.parent.right, ai.radius);
-              targetSetter.enabled = false;
-             ai.destination = PickRandomPoint();
-              ai.SearchPath();
- 
-            }
-            
-
-
-
-
-                if ((ai.desiredVelocity.x > 0 && !dirRight) || (ai.desiredVelocity.x < 0 && dirRight))
+            anim.setAnim("EnemySpeed", ai.velocity.sqrMagnitude);
+            setState();
+            checkState();
+            ai.maxSpeed = tempSpeed;
+            if ((ai.desiredVelocity.x > 0 && !dirRight) || (ai.desiredVelocity.x < 0 && dirRight))
             {
                 Flip();
             }
@@ -124,6 +108,105 @@ namespace NearYouNameSpace.Enemy
             transform.right = dir;
 
 
+        }
+
+        void setState()
+        {
+            if (!FindObjectOfType<Player.Player>().cantMove)
+            {
+                if (ai.isStopped && state.getState() != AIState.onTrack && state.getState() != AIState.pursuing) { AudioManagement.SoundController.stopBGS(); state.changeState(AIState.idle); }
+                hit = Physics2D.Raycast(transform.parent.position, transform.parent.right, ai.radius);
+                if (hit && hit.collider.tag == "runTrack" && state.getState() != AIState.onTrack && state.getState() != AIState.pursuing)
+                {
+
+                    AudioManagement.SoundController.playBGS(AudioManagement.BGS.APPROACH2, true);
+
+                    state.changeState(AIState.onTrack);
+                }
+                if (FindObjectOfType<RunTracks>() == null && state.getState() == AIState.onTrack)
+                {
+                    AudioManagement.SoundController.stopBGS();
+                    state.changeState(AIState.idle);
+                }
+                if (Vector2.Distance(transform.parent.position, player.position) > ai.radius && state.getState() != AIState.onTrack)
+                {
+                    AudioManagement.SoundController.stopBGS();
+                    state.changeState(AIState.outofrange);
+                }
+                if (Vector2.Distance(transform.parent.position, player.position) <= ai.radius && state.getState() != AIState.pursuing)
+                {
+                    AudioManagement.SoundController.stopBGS();
+                    state.changeState(AIState.noticed);
+                    //
+                }
+                if (Vector2.Distance(transform.parent.position, player.position) > ai.radius * 5)
+                {
+                    AudioManagement.SoundController.stopBGS();
+                    state.changeState(AIState.lost);
+
+
+                }
+
+                if (state.getState() == AIState.noticed)
+                {
+                    state.changeState(AIState.pursuing);
+
+                    AudioManagement.SoundController.playBGS(AudioManagement.BGS.APPROACH1, true);
+
+                }
+            }
+            
+        }
+
+        void returnSpeed() {
+            durationOfPursuing = 0f;
+            tempSpeed = EnemySpeed.value;
+        }
+        void checkState() {
+            switch (state.getState()) {
+                case AIState.noticed:
+                    returnSpeed();
+                    targetSetter.enabled = true;
+                    
+
+                    break;
+                case AIState.lost:
+                    returnSpeed();
+                    targetSetter.enabled = false;
+
+                    ai.Teleport(PickPointNearPlayer());
+                    while (collided)
+                    {
+                        ai.Teleport(PickPointNearPlayer());
+                    }
+                    
+                    break;
+                case AIState.pursuing: targetSetter.enabled = true; if (durationOfPursuing > 3f&&tempSpeed<5f) { tempSpeed += 0.1f; } durationOfPursuing += Time.deltaTime;break;
+                case AIState.onTrack:
+                    
+                    returnSpeed();
+                    if (hit)
+                    {
+                        RunTracks[] tracks = FindObjectsOfType<RunTracks>();
+
+                        if (tracks != null)
+                        {
+                            targetSetter.enabled = false;
+                            ai.destination = tracks[0].transform.position;
+                            ai.SearchPath();
+                        }
+                        
+                    }
+                    break;
+                case AIState.outofrange:
+                default:
+                    returnSpeed();
+                    targetSetter.enabled = false;
+                    ai.destination = PickRandomPoint();
+                    ai.SearchPath();
+                    
+                    break;
+            }
         }
     }
 }

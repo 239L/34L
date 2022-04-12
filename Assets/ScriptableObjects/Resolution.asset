@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e27059b66a2c34598faad4d92af102, type: 3}
   m_Name: Resolution
   m_EditorClassIdentifier: 
-  value: 19
+  value: -1

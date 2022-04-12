@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d88e5b958a84d4484ef4d33f1ba4bd, type: 3}
-  m_Name: Language
+  m_Script: {fileID: 11500000, guid: bd569d1307a1c5740a316a0c756bea4c, type: 3}
+  m_Name: Hide
   m_EditorClassIdentifier: 
-  value: 
+  enumName: Hide
