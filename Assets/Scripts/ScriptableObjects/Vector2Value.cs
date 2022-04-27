@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.ScriptableObjects
-{
+
     [CreateAssetMenu(menuName = "ScriptableObjects/Vector2Value", fileName = "New Vector2 Value")]
     public class Vector2Value : ScriptableObject
     {
@@ -11,4 +10,3 @@ namespace NearYouNameSpace.ScriptableObjects
 
 
     }
-}

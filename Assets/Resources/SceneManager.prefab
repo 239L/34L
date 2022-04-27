@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prevScene: {fileID: 11400000, guid: 8a662b91ff4a58945b9356767b4738be, type: 2}
+  intEvent: {fileID: 11400000, guid: 8663f10237c76c548bbe2113eb0f6883, type: 2}

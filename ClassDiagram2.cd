@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SoundAssets">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="SoundAssets.AudioSourceExtended" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\AudioManagement\SoundAssets.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="SoundAssets.SEAudioClip" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\AudioManagement\SoundAssets.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="SoundAssets.BGMAudioClip" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\AudioManagement\SoundAssets.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="SoundAssets.BGSAudioClip" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\AudioManagement\SoundAssets.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="SoundAssets.MEAudioClip" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\AudioManagement\SoundAssets.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABQAAAAQACAgQBAAABAAAQAAEABAAACQQEAAgAACAEk=</HashCode>
+      <FileName>Assets\Scripts\AudioManagement\SoundAssets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundController">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAEAAAAAEUAAABAAAAwEAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AudioManagement\SoundController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AbilityController">
+    <Position X="12.75" Y="1.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="AbilityController.AbilityState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Controllers\AbilityController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAAAAAAAAAIEAAAAACAAAAABAAAEIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\AbilityController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ability" />
+      <Field Name="player" />
+      <Field Name="bar" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AnimController">
+    <Position X="11" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\AnimController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarController">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAEAAAACAUAAFAAAAAQAAAEAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\BarController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="fader" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CameraController">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAAAAAACAEAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\CameraController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyState">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\EnemyState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventsController">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAiAAAAAADAAAAAAAAAAAAAAAABQAAABAAAAAQAAqEA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\EventsController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="player" />
+      <Field Name="currentInteractable" />
+      <Field Name="onButtonPressed" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EnemyController">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFQEAAAABCABAwEQAAgAAIEABAAAAgAFAQAgAAAABAY=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="anim" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Fader" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCAAAkAAACIQAEAAAAABAAAAAAAAiAAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Coroutines\Fader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerAbility">
+    <Position X="12.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAABAAAAAAAAAACAEAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\PlayerAbility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StateController" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Controllers\StateController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQCgAqAEAAFEAAEAAAEAAAAAQwAAEQAAAAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="anim" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Interactable">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAACFAQAAAAEQIAAAAIkABACAAAUAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\World\Interactable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="interact" />
+      <Field Name="onInteract" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerRun">
+    <Position X="12.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAABAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\PlayerRun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interact">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\Interact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AxeInteract" Collapsed="true">
+    <Position X="22.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAIAAAAAAAAAAAAAAIAAAACAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\AxeInteract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HidingSpotInteract" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAIAAAAEAAAABAAAAAAAAAAAAAAAAAACEA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\HidingSpotInteract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RedButtonInteract" Collapsed="true">
+    <Position X="22.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\RedButtonInteract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WireInteract" Collapsed="true">
+    <Position X="22.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAIAAACAAAAAgAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\WireInteract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InteractableEvent" Collapsed="true">
+    <Position X="22.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\Events\InteractableEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VoidEvent">
+    <Position X="22.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\Events\VoidEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseGameEvent&lt;T&gt;" Collapsed="true">
+    <Position X="20.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAgAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\Events\BaseGameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConfigData">
+    <Position X="24.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAgAAAAEAAAAAAAIAAAAAAAAAAAAAYA=</HashCode>
+      <FileName>Assets\Scripts\GameData\ConfigData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveSystem">
+    <Position X="27.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameData\SaveSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableConfig">
+    <Position X="26" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAACAAQAAwAAAAEAAgAAABIgAAAQAAAAAAAAcA=</HashCode>
+      <FileName>Assets\Scripts\GameData\ScriptableConfig.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="language" />
+      <Field Name="languageDropdownValue" />
+      <Field Name="masterVolume" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="IntValue" Collapsed="true">
+    <Position X="27.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\IntValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FloatValue" Collapsed="true">
+    <Position X="27.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\FloatValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StringValue" Collapsed="true">
+    <Position X="27.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\StringValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicEventListener&lt;T, E, UER&gt;" Collapsed="true">
+    <Position X="31.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAABAAAACAAAAAgIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\EventListeners\BasicEventListener.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BoolListener" Collapsed="true">
+    <Position X="29.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\EventListeners\BoolListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InteractableListener" Collapsed="true">
+    <Position X="29.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\EventListeners\InteractableListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntListener" Collapsed="true">
+    <Position X="29.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\EventListeners\IntListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VoidListener" Collapsed="true">
+    <Position X="29.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\EventListeners\VoidListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimEvent" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\Events\AnimEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoolEvent" Collapsed="true">
+    <Position X="22.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\Events\BoolEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntEvent" Collapsed="true">
+    <Position X="22.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\Events\IntEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoolUnityEvent" Collapsed="true">
+    <Position X="24.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\UnityEvents\BoolUnityEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntUnityEvent" Collapsed="true">
+    <Position X="24.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\UnityEvents\IntUnityEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityAnimEvent" Collapsed="true">
+    <Position X="24.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\UnityEvents\UnityAnimEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityInteractableEvent" Collapsed="true">
+    <Position X="24.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\UnityEvents\UnityInteractableEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityVoidEvent" Collapsed="true">
+    <Position X="24.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\UnityEvents\UnityVoidEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AudioSwitch">
+    <Position X="26" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAACAAAAAFAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameInterface\AudioSwitch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackToMain" Collapsed="true">
+    <Position X="27.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameInterface\BackToMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomButton">
+    <Position X="29.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAoAMAAAAAQABAAA=</HashCode>
+      <FileName>Assets\Scripts\GameInterface\CustomButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExitButton" Collapsed="true">
+    <Position X="27.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameInterface\ExitButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameResolution">
+    <Position X="26" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAEAAAIBAAAEAABggAAIAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\GameInterface\GameResolution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pause">
+    <Position X="31.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAABAAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAgAIAg=</HashCode>
+      <FileName>Assets\Scripts\GameInterface\Pause.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayButton" Collapsed="true">
+    <Position X="27.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameInterface\PlayButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResolutionSwitch" Collapsed="true">
+    <Position X="31.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAEAIBAAAAAAAAAAAIAAABAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\GameInterface\ResolutionSwitch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SettingsButton" Collapsed="true">
+    <Position X="27.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEAACAAAAAAAAAAAAAAAAAAAgAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameInterface\SettingsButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowedButton" Collapsed="true">
+    <Position X="27.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\GameInterface\WindowedButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LanguageSwitch">
+    <Position X="34.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAACgIAAAAEAgAAAAAgAAAAAAAQAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Localization\LanguageSwitch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LocaleApp" Collapsed="true">
+    <Position X="36.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAgACAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Localization\LocaleApp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LocaleHelper">
+    <Position X="36.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Localization\LocaleHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LocalizationController">
+    <Position X="38.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQCAAACACAEAAAAAgiAEAAAAABIAABAaAAgiAAAQEI=</HashCode>
+      <FileName>Assets\Scripts\Localization\LocalizationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Localized">
+    <Position X="36.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAQAAAAFAAAAAAAAAAAIAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Localization\Localized.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LocData">
+    <Position X="34.75" Y="3.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="LocData.LocItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Localization\LocData.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Localization\LocData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneController">
+    <Position X="40" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQCEAAAAAAAAACAAAAABAEAAAAAAAAAAAAEE=</HashCode>
+      <FileName>Assets\Scripts\SceneManagement\SceneController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Void" Collapsed="true">
+    <Position X="24.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvents\Void.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="IAnimator" Collapsed="true">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\World\IAnimator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SoundTypes" Collapsed="true">
+    <Position X="7.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AudioManagement\SoundAssets.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SE" Collapsed="true">
+    <Position X="7.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\AudioManagement\SoundController.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BGM" Collapsed="true">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AudioManagement\SoundController.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BGS" Collapsed="true">
+    <Position X="5.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\AudioManagement\SoundController.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ME" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAIAASAAACAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AudioManagement\SoundController.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AIState" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAwAgAAAAAAAAAAAAAAAAIAAAAAABEAAI=</HashCode>
+      <FileName>Assets\Scripts\Controllers\EnemyState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LangOptions" Collapsed="true">
+    <Position X="36.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAABAAAAAAQAAAAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Localization\LocaleApp.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SceneIndexes" Collapsed="true">
+    <Position X="40" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneManagement\SceneController.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="8.25" />
+</ClassDiagram>

@@ -1,10 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.Controllers;
 
-namespace NearYouNameSpace.World
-{
     public class Wire : MonoBehaviour, IAnimator
     {
         [SerializeField]
@@ -59,4 +56,3 @@ namespace NearYouNameSpace.World
             this.gameObject.transform.rotation = q;
         }
     }
-}

@@ -1,5 +1,4 @@
-﻿namespace NearYouNameSpace.Localization
-{
+﻿
     public enum LangOptions
     {
         Russian,
@@ -14,4 +13,3 @@
         public const string DA = "DA";
         public const string ES = "ES";
     }
-}

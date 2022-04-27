@@ -1,10 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.ScriptableObjects;
-using NearYouNameSpace.GameEvents.Events;
-namespace NearYouNameSpace.World
-{
+
     public class Interactable : MonoBehaviour
     {
         bool isTriggered = false;
@@ -32,13 +29,13 @@ namespace NearYouNameSpace.World
         
         private void Awake()
         {
-
+            if (EventsController.instance) { if (!EventsController.instance.Player) { EventsController.instance.Player = FindObjectOfType<Player>(); } }
         }
         // Start is called before the first frame update
         void Start()
         {
            
-            if (Type&& Type.Name!="Hide") onInteract.Raise(this);
+            if (Type&&Type.Name!="Hide") onInteract.Raise(this);
             triggered = false;
 
         }
@@ -48,12 +45,12 @@ namespace NearYouNameSpace.World
         {
             if (Input.GetKeyDown(KeyCode.E) && triggered)
             {
-                if (!compareNumber || compareNumber.Number == number)
-                {
+                //if (!compareNumber || compareNumber.Number == number)
+                //{
                     Debug.Log("Interact");
                     Interact.Act();
                     onInteract.Raise(this);
-                }
+                //}
 
             }
         }
@@ -85,4 +82,3 @@ namespace NearYouNameSpace.World
 
 
     }
-}

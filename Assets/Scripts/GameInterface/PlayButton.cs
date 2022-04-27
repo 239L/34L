@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.SceneManagement;
-namespace NearYouNameSpace.GameInterface
-{
+
     public class PlayButton : CustomButton
     {
         // Start is called before the first frame update
@@ -28,4 +26,3 @@ namespace NearYouNameSpace.GameInterface
             SceneController.instance.LoadScene((int)SceneIndexes.GAME);
         }
     }
-}

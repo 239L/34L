@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.GameData
-{
     [System.Serializable]
     public class ConfigData
     {
@@ -27,4 +25,3 @@ namespace NearYouNameSpace.GameData
         }
 
     }
-}

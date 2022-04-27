@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
-using NearYouNameSpace.ScriptableObjects;
-namespace NearYouNameSpace.AudioManagement{
+
     public enum SoundTypes {
         BGM,
         ME,
@@ -133,4 +132,3 @@ namespace NearYouNameSpace.AudioManagement{
         }
 
     }
-}

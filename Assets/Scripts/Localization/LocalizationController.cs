@@ -5,9 +5,7 @@ using System;
 using System.IO;
 using UnityEngine.Networking;
 using System.Linq;
-using NearYouNameSpace.ScriptableObjects;
-namespace NearYouNameSpace.Localization
-{
+
     public class LocalizationController : MonoBehaviour
     {
         [Header("Strings")]
@@ -158,4 +156,3 @@ namespace NearYouNameSpace.Localization
 
         }
     }
-}

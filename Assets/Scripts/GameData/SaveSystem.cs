@@ -5,8 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-namespace NearYouNameSpace.GameData
-{
+
     public static class SaveSystem
     {
         public static void SaveConfigData(ScriptableConfig sc)
@@ -47,4 +46,3 @@ namespace NearYouNameSpace.GameData
         }
 
     }
-}

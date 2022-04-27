@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace NearYouNameSpace.ScriptableObjects
-{
+
     [CreateAssetMenu]
     public class PlayerRun : PlayerAbility
     {
@@ -25,4 +24,3 @@ namespace NearYouNameSpace.ScriptableObjects
         }
 
     }
-}

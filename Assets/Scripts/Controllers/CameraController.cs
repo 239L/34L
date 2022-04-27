@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.Controllers
-{
     public class CameraController : MonoBehaviour
     {
 
@@ -20,4 +18,3 @@ namespace NearYouNameSpace.Controllers
             transform.position = new Vector3(inherit.position.x + pos.x, inherit.position.y + pos.y, pos.z);
         }
     }
-}

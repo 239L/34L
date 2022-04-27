@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using NearYouNameSpace.ScriptableObjects;
-using NearYouNameSpace.AudioManagement;
-namespace NearYouNameSpace.GameInterface
-{
-    public class AudioSwitch : MonoBehaviour
+ public class AudioSwitch : MonoBehaviour
     {
         // Start is called before the first frame update
         [SerializeField]
@@ -32,4 +28,3 @@ namespace NearYouNameSpace.GameInterface
 
         }
     }
-}

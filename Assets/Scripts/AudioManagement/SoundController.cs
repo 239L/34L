@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-namespace NearYouNameSpace.AudioManagement
-{
 
     public enum SE
     {
@@ -116,4 +114,3 @@ namespace NearYouNameSpace.AudioManagement
             return SoundAssets.Instance.BGMAudioClips[(int)sound].audioClip;
         }
     }
-}

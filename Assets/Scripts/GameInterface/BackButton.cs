@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using NearYouNameSpace.GameData;
-namespace NearYouNameSpace.GameInterface
-{
+
     public class BackButton : CustomButton
     {
         [SerializeField]
@@ -27,4 +25,3 @@ namespace NearYouNameSpace.GameInterface
         }
 
     }
-}

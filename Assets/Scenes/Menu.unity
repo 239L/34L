@@ -3249,5 +3249,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7514820119340641831, guid: a8f3d35250d68bb4b81d00485deab03b,
+        type: 3}
+      propertyPath: voidEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 8663f10237c76c548bbe2113eb0f6883,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8f3d35250d68bb4b81d00485deab03b, type: 3}

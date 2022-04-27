@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.ScriptableObjects;
-namespace NearYouNameSpace.GameInterface
-{
+
     public class WindowedButton : CustomButton
     {
         [SerializeField]
@@ -30,4 +28,3 @@ namespace NearYouNameSpace.GameInterface
         }
 
     }
-}

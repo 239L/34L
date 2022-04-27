@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.World
-{
+
     public class ObstacleBehaviour : MonoBehaviour
     {
         [SerializeField]
@@ -52,4 +51,3 @@ namespace NearYouNameSpace.World
 
         }
     }
-}

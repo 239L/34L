@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace NearYouNameSpace.Coroutines
-{
     public enum Type
     {
         Sprite,
@@ -126,4 +124,3 @@ namespace NearYouNameSpace.Coroutines
 
          }*/
     }
-}

@@ -1,13 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.Localization;
-using NearYouNameSpace.ScriptableObjects;
-using NearYouNameSpace.SceneManagement;
-using NearYouNameSpace.GameInterface;
-using NearYouNameSpace.AudioManagement;
-using NearYouNameSpace.GameData;
-namespace NearYouNameSpace.Controllers {
+
     public class ManagementHelper : MonoBehaviour
     {
         private void Awake()
@@ -46,4 +40,3 @@ namespace NearYouNameSpace.Controllers {
 
         }
     }
-}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c61bfb4cf861e4dacc7f638a8168b5, type: 3}
+  m_Name: BoxInteract4
+  m_EditorClassIdentifier: 
+  name: BoxInteract4
+  boxTouched: {fileID: 11400000, guid: a7e6e7e7caa5f8a48b6e6633f772f582, type: 2}
+  number: 4
+  numbers:
+  - {fileID: 11400000, guid: 6b9204c61bbe5484094eb626d3bc68ac, type: 2}
+  - {fileID: 11400000, guid: 6f66e37d6e74e4646ac2c0f78185fbe0, type: 2}
+  - {fileID: 11400000, guid: 2fc50ae0320d8dc46ab134041e7dba7a, type: 2}

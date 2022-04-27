@@ -1,10 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.ScriptableObjects;
 
-namespace NearYouNameSpace.GameData
-{
     public class ScriptableConfig : MonoBehaviour
     {
         private static ScriptableConfig instance;
@@ -47,4 +44,3 @@ namespace NearYouNameSpace.GameData
             }
         }
     }
-}

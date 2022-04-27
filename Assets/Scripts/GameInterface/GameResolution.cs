@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using NearYouNameSpace.ScriptableObjects;
 
-namespace NearYouNameSpace.GameInterface
-{
     public class GameResolution : MonoBehaviour
     {
         public static GameResolution instance;
@@ -67,4 +64,3 @@ namespace NearYouNameSpace.GameInterface
 
         }
     }
-}

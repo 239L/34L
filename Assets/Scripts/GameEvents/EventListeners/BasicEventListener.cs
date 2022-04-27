@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using NearYouNameSpace.GameEvents.Events;
-namespace NearYouNameSpace.GameEvents.EventListeners
-{
+
     public abstract class BasicEventListener<T, E, UER> : MonoBehaviour, IEventListener<T>
         where E : BaseGameEvent<T> where UER : UnityEvent<T>
     {
@@ -36,4 +34,3 @@ namespace NearYouNameSpace.GameEvents.EventListeners
             }
         }
     }
-}

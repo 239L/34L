@@ -1,10 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.GameData;
 
-namespace NearYouNameSpace.GameInterface
-{
     public class BackToMain : CustomButton
     {
         [SerializeField]
@@ -18,7 +15,6 @@ namespace NearYouNameSpace.GameInterface
             SaveSystem.SaveConfigData(sc);
             base.onClick();
             Pause.canPause = false;
-            SceneManagement.SceneController.instance.LoadScene((int)SceneManagement.SceneIndexes.MENU);
+            SceneController.instance.LoadScene((int)SceneIndexes.MENU);
         }
     }
-}

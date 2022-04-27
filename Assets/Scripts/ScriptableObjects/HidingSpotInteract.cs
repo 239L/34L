@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace NearYouNameSpace.ScriptableObjects
-{
+
     [CreateAssetMenu(menuName = "ScriptableObjects/Interact/HideInteract", fileName = "New Hide Interact")]
     public class HidingSpotInteract : Interact
     {
@@ -10,6 +10,7 @@ namespace NearYouNameSpace.ScriptableObjects
         BoolValue hide;
 
         
+        [SerializeField] BoolEvent boolEvent;
         public BoolValue Hide { get => hide; set => hide = value; }
 
         public override BoolValue getBool()
@@ -25,7 +26,7 @@ namespace NearYouNameSpace.ScriptableObjects
         {
             if (hide.value) { hide.value = false; }
             else { hide.value = true; }
+            boolEvent.Raise(hide.value);
 
         }
     }
-}

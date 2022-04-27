@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-using NearYouNameSpace.Controllers;
-using NearYouNameSpace.ScriptableObjects;
-using NearYouNameSpace.Player;
-namespace NearYouNameSpace.Enemy
-{
+
     public class EnemyController : MonoBehaviour
     {
         public AnimController anim;
@@ -112,36 +108,36 @@ namespace NearYouNameSpace.Enemy
 
         void setState()
         {
-            if (!FindObjectOfType<Player.Player>().cantMove)
+            if (!FindObjectOfType<Player>().cantMove)
             {
-                if (ai.isStopped && state.getState() != AIState.onTrack && state.getState() != AIState.pursuing) { AudioManagement.SoundController.stopBGS(); state.changeState(AIState.idle); }
+                if (ai.isStopped && state.getState() != AIState.onTrack && state.getState() != AIState.pursuing) { SoundController.stopBGS(); state.changeState(AIState.idle); }
                 hit = Physics2D.Raycast(transform.parent.position, transform.parent.right, ai.radius);
                 if (hit && hit.collider.tag == "runTrack" && state.getState() != AIState.onTrack && state.getState() != AIState.pursuing)
                 {
 
-                    AudioManagement.SoundController.playBGS(AudioManagement.BGS.APPROACH2, true);
+                    SoundController.playBGS(BGS.APPROACH2, true);
 
                     state.changeState(AIState.onTrack);
                 }
                 if (FindObjectOfType<RunTracks>() == null && state.getState() == AIState.onTrack)
                 {
-                    AudioManagement.SoundController.stopBGS();
+                    SoundController.stopBGS();
                     state.changeState(AIState.idle);
                 }
                 if (Vector2.Distance(transform.parent.position, player.position) > ai.radius && state.getState() != AIState.onTrack)
                 {
-                    AudioManagement.SoundController.stopBGS();
+                    SoundController.stopBGS();
                     state.changeState(AIState.outofrange);
                 }
                 if (Vector2.Distance(transform.parent.position, player.position) <= ai.radius && state.getState() != AIState.pursuing)
                 {
-                    AudioManagement.SoundController.stopBGS();
+                    SoundController.stopBGS();
                     state.changeState(AIState.noticed);
                     //
                 }
                 if (Vector2.Distance(transform.parent.position, player.position) > ai.radius * 5)
                 {
-                    AudioManagement.SoundController.stopBGS();
+                    SoundController.stopBGS();
                     state.changeState(AIState.lost);
 
 
@@ -151,7 +147,7 @@ namespace NearYouNameSpace.Enemy
                 {
                     state.changeState(AIState.pursuing);
 
-                    AudioManagement.SoundController.playBGS(AudioManagement.BGS.APPROACH1, true);
+                    SoundController.playBGS(BGS.APPROACH1, true);
 
                 }
             }
@@ -209,4 +205,3 @@ namespace NearYouNameSpace.Enemy
             }
         }
     }
-}

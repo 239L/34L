@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using NearYouNameSpace.ScriptableObjects;
-namespace  NearYouNameSpace.GameInterface{
+
     public class ResolutionSwitch : MonoBehaviour
     {
 
@@ -41,4 +40,3 @@ namespace  NearYouNameSpace.GameInterface{
 
         }
     }
-}

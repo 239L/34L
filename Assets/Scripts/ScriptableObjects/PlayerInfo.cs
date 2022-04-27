@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace NearYouNameSpace.ScriptableObjects
-{
+
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/PlayerInfo", order = 1)]
     public class PlayerInfo : ScriptableObject
     {
@@ -30,4 +29,3 @@ namespace NearYouNameSpace.ScriptableObjects
 
 
     }
-}

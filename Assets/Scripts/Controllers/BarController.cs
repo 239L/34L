@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using NearYouNameSpace.Coroutines;
-namespace NearYouNameSpace.Controllers
-{
+
     public class BarController : MonoBehaviour
     {
         [SerializeField]
@@ -41,4 +39,3 @@ namespace NearYouNameSpace.Controllers
         }
 
     }
-}

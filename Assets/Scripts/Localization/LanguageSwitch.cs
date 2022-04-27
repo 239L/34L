@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
-using NearYouNameSpace.ScriptableObjects;
 
-namespace NearYouNameSpace.Localization
-{
     public class LanguageSwitch : MonoBehaviour
     {
         public TMP_Dropdown drop;
@@ -82,4 +79,3 @@ namespace NearYouNameSpace.Localization
 
         }
     }
-}

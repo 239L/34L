@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Wire" Collapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAIAAAAAAAAAAAIQAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\World\Wire.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Screamer" Collapsed="true">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAIAACACAAAAAAAAAAAEAEAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\World\Screamer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RedButton" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\World\RedButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.148" />
+  </Class>
+  <Class Name="ObstacleBehaviour" Collapsed="true">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\World\ObstacleBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interactable" Collapsed="true">
+    <Position X="9.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAACFAQAAAAEQIAAAAIkABACAAAUAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\World\Interactable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HidingSpotController" Collapsed="true">
+    <Position X="1" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAABAAEAAABAAAAAYQQIAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\World\HidingSpotController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Interact" Collapsed="true">
+    <Position X="4.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\Interact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AxeInteract" Collapsed="true">
+    <Position X="1" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAIAAAAAAAAAAAAAAIAAAACAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\AxeInteract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HidingSpotInteract" Collapsed="true">
+    <Position X="3.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAIAAAAEAAAABAAAAAAAAAAAAAAAAAACEA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\HidingSpotInteract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RedButtonInteract" Collapsed="true">
+    <Position X="5.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\RedButtonInteract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WireInteract" Collapsed="true">
+    <Position X="7.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAIAAACAAAAAgAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjects\WireInteract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneController" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQCEAAAAAAAAACAAAAABAEAAAAAAAAAAAAEE=</HashCode>
+      <FileName>Assets\Scripts\SceneManagement\SceneController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="8" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQCgAqAEAAFEAAEAAAEAAAAAQwAAEQAAAAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RunTracks">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAEAAEAAQAAEAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\RunTracks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IAnimator">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\World\IAnimator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SceneIndexes" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneManagement\SceneController.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="8.25" />
+</ClassDiagram>

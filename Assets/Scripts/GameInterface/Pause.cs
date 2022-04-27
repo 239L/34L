@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.GameData;
-namespace NearYouNameSpace.GameInterface
-{
+
     public class Pause : MonoBehaviour
     {
         public static bool canPause = true;
@@ -48,9 +46,9 @@ namespace NearYouNameSpace.GameInterface
             
             menuPanel.SetActive(false);
             Time.timeScale = 1f;
-            if (AudioManagement.SoundAssets.Instance.BGSSource.clip)
+            if (SoundAssets.Instance.BGSSource.clip)
             {
-                AudioManagement.SoundAssets.Instance.BGSSource.UnPause();
+                SoundAssets.Instance.BGSSource.UnPause();
             }
             isPaused = false;
         }
@@ -59,11 +57,10 @@ namespace NearYouNameSpace.GameInterface
             
             menuPanel.SetActive(true);
             Time.timeScale = 0f;
-            if (AudioManagement.SoundAssets.Instance.BGSSource.clip)
+            if (SoundAssets.Instance.BGSSource.clip)
             {
-                AudioManagement.SoundAssets.Instance.BGSSource.Pause();
+                SoundAssets.Instance.BGSSource.Pause();
             }
             isPaused = true;
         }
     }
-}

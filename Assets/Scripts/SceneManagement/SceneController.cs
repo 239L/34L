@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using NearYouNameSpace.AudioManagement;
-using NearYouNameSpace.Localization;
-using NearYouNameSpace.ScriptableObjects;
 
-namespace NearYouNameSpace.SceneManagement{
     public enum SceneIndexes {
         MENU = 0,
         GAME = 1
@@ -16,6 +12,7 @@ namespace NearYouNameSpace.SceneManagement{
         [SerializeField]
         private IntValue prevScene;
 
+        [SerializeField] IntEvent intEvent;
         public static SceneController instance;
         // Start is called before the first frame update
         void Start()
@@ -48,9 +45,9 @@ namespace NearYouNameSpace.SceneManagement{
         }
 
         public void LoadScene(int index) {
+
+            intEvent.Raise(index);
             StartCoroutine(LoadAsyncScene(index));
-
-
         }
         IEnumerator LoadAsyncScene(int index)
         {
@@ -65,6 +62,6 @@ namespace NearYouNameSpace.SceneManagement{
             }
             LocalizationController.Instance.getLocalizedItems();
             handleBGM();
+            
         }
     }
-}

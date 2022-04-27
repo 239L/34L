@@ -1,10 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.Controllers;
-using NearYouNameSpace.ScriptableObjects;
 
-namespace NearYouNameSpace.Player{
     public class Player : MonoBehaviour
     {
         private const float DISTANCE = 1.1f;
@@ -43,7 +40,7 @@ namespace NearYouNameSpace.Player{
         void Update() {
             checkState();
             movement.x = Input.GetAxisRaw("Horizontal");
-            if (((movement.x < 0 && !dirRight) || (movement.x > 0 && dirRight))&&!GameInterface.Pause.isPaused) {
+            if (((movement.x < 0 && !dirRight) || (movement.x > 0 && dirRight))&&!Pause.isPaused) {
                 Flip();
             }
             movement.y = Input.GetAxisRaw("Vertical");
@@ -99,4 +96,3 @@ namespace NearYouNameSpace.Player{
 
     }
 
-}

@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.GameEvents.EventListeners;
-namespace NearYouNameSpace.GameEvents.Events
-{
+
     public abstract class BaseGameEvent<T> : ScriptableObject
     {
         private readonly List<IEventListener<T>> eventListeners = new List<IEventListener<T>>();
@@ -32,4 +30,3 @@ namespace NearYouNameSpace.GameEvents.Events
             }
         }
     }
-}

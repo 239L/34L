@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.GameInterface
-{
+
     public class ExitButton : CustomButton
     {
         public override void onClick()
@@ -12,4 +11,3 @@ namespace NearYouNameSpace.GameInterface
             Application.Quit();
         }
     }
-}

@@ -1,10 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.ScriptableObjects;
 
-namespace NearYouNameSpace.Controllers
-{
     public class AbilityController : MonoBehaviour
     {
         [SerializeField]
@@ -89,4 +86,3 @@ namespace NearYouNameSpace.Controllers
             }
         }
     }
-}

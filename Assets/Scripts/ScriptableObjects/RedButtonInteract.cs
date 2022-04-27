@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.ScriptableObjects
-{
+
     [CreateAssetMenu(menuName = "ScriptableObjects/Interact/RedButtonInteract", fileName = "New RedButton Interact")]
     public class RedButtonInteract : Interact
     {
@@ -24,4 +23,3 @@ namespace NearYouNameSpace.ScriptableObjects
         }
 
     }
-}

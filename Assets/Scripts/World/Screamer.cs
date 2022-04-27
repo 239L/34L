@@ -1,10 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.Controllers;
 
-namespace NearYouNameSpace.World
-{
     public class Screamer : MonoBehaviour
     {
         public AnimController anim;
@@ -28,6 +25,7 @@ namespace NearYouNameSpace.World
             if (collision.CompareTag("Player") && !finished)
             {
                 cam.repeatable = true;
+                SoundController.playME(ME.DRILL);
                 StartCoroutine(Duration());
 
             }
@@ -43,4 +41,3 @@ namespace NearYouNameSpace.World
 
         }
     }
-}

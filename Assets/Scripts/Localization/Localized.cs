@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
-namespace NearYouNameSpace.Localization
-{
+
     public class Localized : MonoBehaviour
     {
         [SerializeField]
@@ -48,4 +47,3 @@ namespace NearYouNameSpace.Localization
             text.text = newVal;
         }
     }
-}

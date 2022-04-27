@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.Controllers
-{
+
     public class AnimController : MonoBehaviour
     {
         [SerializeField]
@@ -24,4 +23,3 @@ namespace NearYouNameSpace.Controllers
         }
 
     }
-}

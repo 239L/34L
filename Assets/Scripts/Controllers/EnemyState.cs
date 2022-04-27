@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.Controllers
-{
+
     public enum AIState { 
         idle,
         noticed,
@@ -31,4 +30,3 @@ namespace NearYouNameSpace.Controllers
             }
         }
     }
-}

@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace NearYouNameSpace.Localization
-{
+
     public static class LocaleHelper
     {
 
@@ -19,4 +18,3 @@ namespace NearYouNameSpace.Localization
             }
         }
     }
-}

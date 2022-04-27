@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.Controllers
-{
     public enum State
     {
         idle,
@@ -30,4 +28,3 @@ namespace NearYouNameSpace.Controllers
         }
 
     }
-}

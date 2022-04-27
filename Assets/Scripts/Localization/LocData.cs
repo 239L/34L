@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.Localization
-{
     public class LocData
     {
         [SerializeField]
@@ -19,4 +17,3 @@ namespace NearYouNameSpace.Localization
             public string value;
         }
     }
-}

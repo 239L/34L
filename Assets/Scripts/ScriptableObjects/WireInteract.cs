@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace NearYouNameSpace.ScriptableObjects
-{
+
     [CreateAssetMenu(menuName = "ScriptableObjects/Interact/WireInteract", fileName = "New Wire Interact")]
     public class WireInteract : Interact
     {
@@ -25,4 +24,3 @@ namespace NearYouNameSpace.ScriptableObjects
 
         }
     }
-}

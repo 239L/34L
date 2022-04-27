@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NearYouNameSpace.Coroutines;
-namespace NearYouNameSpace.Player
-{
+
     public class RunTracks : MonoBehaviour
     {
         [SerializeField] Rigidbody2D rb;
@@ -25,4 +23,3 @@ namespace NearYouNameSpace.Player
 
 
     }
-}

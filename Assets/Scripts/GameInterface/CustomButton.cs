@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using NearYouNameSpace.AudioManagement;
-using NearYouNameSpace.SceneManagement;
-namespace NearYouNameSpace.GameInterface
-{
+
     public abstract class CustomButton : MonoBehaviour
     {
         int index;
@@ -35,4 +32,3 @@ namespace NearYouNameSpace.GameInterface
             SceneController.instance.LoadScene(index);
         }
     }
-}

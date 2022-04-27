@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NearYouNameSpace.ScriptableObjects 
-{
+
     [CreateAssetMenu(menuName = "ScriptableObjects/Interact/AxeInteract", fileName = "New Axe Interact")]
     public class AxeInteract : Interact
     {
@@ -27,4 +26,3 @@ namespace NearYouNameSpace.ScriptableObjects
 
 
     }
-}
