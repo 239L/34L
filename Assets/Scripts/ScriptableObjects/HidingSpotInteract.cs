@@ -10,7 +10,7 @@ using UnityEngine;
         BoolValue hide;
 
         
-        [SerializeField] BoolEvent boolEvent;
+       
         public BoolValue Hide { get => hide; set => hide = value; }
 
         public override BoolValue getBool()
@@ -26,7 +26,7 @@ using UnityEngine;
         {
             if (hide.value) { hide.value = false; }
             else { hide.value = true; }
-            boolEvent.Raise(hide.value);
+           
 
         }
     }

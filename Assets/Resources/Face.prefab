@@ -13,6 +13,10 @@ GameObject:
   - component: {fileID: 1167966038447499155}
   - component: {fileID: 1167966038447499154}
   - component: {fileID: -5879996379138039037}
+  - component: {fileID: 6861852124367895863}
+  - component: {fileID: 5354700515142023868}
+  - component: {fileID: -4010102913468000168}
+  - component: {fileID: -5482222093040178414}
   m_Layer: 0
   m_Name: Face
   m_TagString: Interactable
@@ -141,3 +145,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd793d3d52b71a48b14b88e5c87af2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interact: {fileID: 11400000, guid: 0a3633cb05f23354a8c50cd673feb16a, type: 2}
+  type: {fileID: 11400000, guid: 8a1fb82502c0a2143adcf51b9d0d2f8d, type: 2}
+  number: 0
+  compareNumber: {fileID: 0}
+  onInteract: {fileID: 11400000, guid: b3283705e77d5e24bbc8e4336ffaaff8, type: 2}
+--- !u!114 &6861852124367895863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167966038447499153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fa960aed8af7e438b269775521d477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1167966038447499154}
+--- !u!114 &5354700515142023868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167966038447499153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f2f64e8f0842e438fb0ec08a7e6b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 6861852124367895863}
+  number: 0
+  interact: {fileID: 11400000, guid: 0a3633cb05f23354a8c50cd673feb16a, type: 2}
+--- !u!114 &-4010102913468000168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167966038447499153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d401e576e7777a45be27c0b7d15f31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 3cb3e47164f5dcc40a7f4ebe3257aaad, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5354700515142023868}
+        m_MethodName: toSet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-5482222093040178414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167966038447499153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d401e576e7777a45be27c0b7d15f31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 469b15523c27ff842b168a28e6b4cfad, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5354700515142023868}
+        m_MethodName: toWrong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

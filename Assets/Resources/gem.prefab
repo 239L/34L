@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 9212750724735117465}
   - component: {fileID: -7930916943770001540}
   - component: {fileID: -9032710174432674540}
+  - component: {fileID: 382909097602888031}
+  - component: {fileID: -2928941206628717728}
   m_Layer: 0
   m_Name: gem
   m_TagString: Interactable
@@ -123,6 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd793d3d52b71a48b14b88e5c87af2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interact: {fileID: 11400000, guid: b3852ba1df1bde643911a7d5f8368f7a, type: 2}
+  type: {fileID: 11400000, guid: 132baf33754d0de48bf2625b411dedd3, type: 2}
+  number: 0
+  compareNumber: {fileID: 0}
+  onInteract: {fileID: 11400000, guid: b3283705e77d5e24bbc8e4336ffaaff8, type: 2}
 --- !u!61 &-9032710174432674540
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +156,44 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6962056, y: 0.6644664}
   m_EdgeRadius: 0
+--- !u!114 &382909097602888031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874376092344743493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3f896d728c53b499ad5598e0d9f7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: {fileID: 0}
+  interact: {fileID: 0}
+--- !u!114 &-2928941206628717728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874376092344743493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d401e576e7777a45be27c0b7d15f31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e560ce216837a50459786ea9627477e4, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 382909097602888031}
+        m_MethodName: placeInTheSlot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

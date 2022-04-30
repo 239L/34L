@@ -217,8 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: -5744641847396689334}
-  animPerformed: {fileID: 11400000, guid: 969d06def8e8f3248959660bbfc78b66, type: 2}
-  performed: 0
+  interactable: {fileID: 1625790556949270363}
 --- !u!114 &-5587218142285521628
 MonoBehaviour:
   m_ObjectHideFlags: 0

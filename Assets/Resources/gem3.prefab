@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6908026244204028020}
   - component: {fileID: 6908026244204027979}
   - component: {fileID: 6908026244204027978}
+  - component: {fileID: 8926369794151291049}
+  - component: {fileID: 3544516650959408575}
   m_Layer: 0
   m_Name: gem3
   m_TagString: Interactable
@@ -149,3 +151,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd793d3d52b71a48b14b88e5c87af2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interact: {fileID: 11400000, guid: 824c4a1ba770526448bcdf7ee9a24a64, type: 2}
+  type: {fileID: 11400000, guid: 132baf33754d0de48bf2625b411dedd3, type: 2}
+  number: 0
+  compareNumber: {fileID: 0}
+  onInteract: {fileID: 11400000, guid: b3283705e77d5e24bbc8e4336ffaaff8, type: 2}
+--- !u!114 &8926369794151291049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6908026244204027977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3f896d728c53b499ad5598e0d9f7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: {fileID: 0}
+  interact: {fileID: 0}
+--- !u!114 &3544516650959408575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6908026244204027977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d401e576e7777a45be27c0b7d15f31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e560ce216837a50459786ea9627477e4, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8926369794151291049}
+        m_MethodName: placeInTheSlot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

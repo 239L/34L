@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
     public class EventsController : MonoBehaviour
 
     {
@@ -11,8 +11,13 @@ using UnityEngine;
         private VoidEvent onWireCut;
         [SerializeField]
         private VoidEvent onButtonPressed;
+        [SerializeField] BoolEvent hideEvent;
 
-        private Interactable currentInteractable;
+        [SerializeField] VoidEvent onSet;
+        [SerializeField] VoidEvent onWrong;
+        [SerializeField] VoidEvent onGemTaking;
+
+    private Interactable currentInteractable;
 
         [SerializeField]
         private List<BoolValue> eventsValues = new List<BoolValue>();
@@ -23,8 +28,13 @@ using UnityEngine;
 
         [SerializeField]
         GameObject yellowGem;
+        [SerializeField]
+        GameObject redGem;
+        [SerializeField]
+        GameObject bronzeKey;
 
     static bool boxes = false;
+    static bool faces = false;
         public Player Player { get { return player; } set { player = value; } }
         private void Awake()
         {
@@ -34,6 +44,7 @@ using UnityEngine;
             else Destroy(gameObject);
 
             DontDestroyOnLoad(gameObject);
+        
            
         }
         void Start()
@@ -42,12 +53,7 @@ using UnityEngine;
         }
     void Update()
     {
-        if (eventsValues[7].value && eventsValues[8].value && eventsValues[9].value && eventsValues[10].value&&!boxes) {
-            SoundController.playME(ME.EVENT);
-            yellowGem.SetActive(true);
-            boxes = true;
-
-        }
+        
     }
 
     public static void setPerformed(bool perform) {
@@ -69,7 +75,18 @@ using UnityEngine;
             toPerform = false;
         }
 
-   
+    void nullifyFaces() {
+        eventsValues[11].value = false;
+        eventsValues[12].value = false;
+        eventsValues[13].value = false;
+        eventsValues[14].value = false;
+        eventsValues[15].value = false;
+    }
+
+    IEnumerator playEvent() {
+        yield return new WaitForSeconds(0.5f);
+        SoundController.playME(ME.EVENT);
+    }
         public void playEvent(Interactable interactable)
         {
 
@@ -118,6 +135,7 @@ using UnityEngine;
                     case HidingSpotInteract hd:
                         Debug.Log(toPerform);
                         currentInteractable = interactable;
+                        hideEvent.Raise(interactable.Interact.getBool().value);
                         if (toPerform)
                         {
                     
@@ -134,7 +152,58 @@ using UnityEngine;
                          StartCoroutine(waitForTheClosetToOpen(a));
                         }
                         break;
+                    case BoxInteract box:
+                        if (eventsValues[7].value && eventsValues[8].value && eventsValues[9].value && eventsValues[10].value && !boxes)
+                        {
+                            
+                            yellowGem.SetActive(true);
+                            boxes = true;
+                            StartCoroutine(playEvent());
+
+                        }break;
+                    case FaceInteract face: currentInteractable = interactable;
+                if (FaceController.animIsFinished)
+                {
+                    if (!face.FaceOn.value && !faces)
+                    {
+                        switch (face.Number)
+                        {
+                            case 5: if (face.Faces.Where(e => e.value == true).Count() <= 0) { face.FaceOn.value = true; onSet.Raise(); } else { nullifyFaces();  onWrong.Raise(); } break;
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                            default:
+                                if (face.Faces.Where(e => e.value == true).Count() == face.Faces.Length)
+                                {
+                                    face.FaceOn.value = true;onSet.Raise();
+                                }
+                                else { nullifyFaces();  onWrong.Raise(); }
+                                break;
+
+                        }
+                    }
+                    
                 }
+                if (!faces && eventsValues[11].value && eventsValues[12].value && eventsValues[13].value && eventsValues[14].value && eventsValues[15].value)
+                    {
+                        
+                        faces = true;
+                    redGem.SetActive(true);
+                        StartCoroutine(playEvent());
+                    }
+                break;
+            case GemInteract gem:
+                if (interactable.Interact.getBool().value)
+                {
+                    SoundController.playSE(SE.CLICK);
+                    onGemTaking.Raise();
+                }
+                if (eventsValues[16].value && eventsValues[17].value && eventsValues[18].value) { bronzeKey.SetActive(true);StartCoroutine(playEvent()); }
+                break;
+                    default:break;
+
+        }
             
 
 

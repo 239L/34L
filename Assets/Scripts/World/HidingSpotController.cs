@@ -9,6 +9,7 @@ using UnityEngine;
         bool hidden;
 
         bool sameInteractables=true;
+        bool firstTime = true;
 
         [SerializeField] Interactable interactable;
 
@@ -18,7 +19,11 @@ using UnityEngine;
         {
         if (sameInteractables)
         {
-            anim.setAnim("Open", hidden);
+            if (firstTime) { anim.setAnim("Open", true);}
+            else
+            {
+                anim.setAnim("Open", hidden);
+            }
             performed = true;
 
 
@@ -29,8 +34,12 @@ using UnityEngine;
 
         IEnumerator waitToClose() {
             yield return new WaitForSeconds(0.5f);
+         
+        
             anim.setAnim("Open", !hidden);
-            performed = false;
+        firstTime = false;
+
+        performed = false;
             
     }
     public void setAnim(bool a)

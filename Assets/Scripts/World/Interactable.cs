@@ -35,7 +35,7 @@ using UnityEngine;
         void Start()
         {
            
-            if (Type&&Type.Name!="Hide") onInteract.Raise(this);
+            if (Type&&Type.Name!="Hide"&&Type.Name!="Face") onInteract.Raise(this);
             triggered = false;
 
         }
