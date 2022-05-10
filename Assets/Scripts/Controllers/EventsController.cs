@@ -16,6 +16,9 @@ using System.Linq;
         [SerializeField] VoidEvent onSet;
         [SerializeField] VoidEvent onWrong;
         [SerializeField] VoidEvent onGemTaking;
+        [SerializeField] VoidEvent onGiftOpen;
+
+    [SerializeField] GameObject minigame_panel;
 
     private Interactable currentInteractable;
 
@@ -26,15 +29,22 @@ using System.Linq;
 
         static bool toPerform=true;
 
+        [SerializeField]GameObject[] locks;
+
+        
         [SerializeField]
         GameObject yellowGem;
         [SerializeField]
         GameObject redGem;
         [SerializeField]
         GameObject bronzeKey;
-
+        [SerializeField]
+        GameObject goldenKey;
+        [SerializeField] GameObject silverKey;
     static bool boxes = false;
     static bool faces = false;
+
+    public static bool minigame_icon_pressed = false;
         public Player Player { get { return player; } set { player = value; } }
         private void Awake()
         {
@@ -56,6 +66,9 @@ using System.Linq;
         
     }
 
+    public void pressMinigameIcon() {
+        minigame_icon_pressed = true;
+    }
     public static void setPerformed(bool perform) {
         toPerform = perform;
     }
@@ -81,6 +94,16 @@ using System.Linq;
         eventsValues[13].value = false;
         eventsValues[14].value = false;
         eventsValues[15].value = false;
+    }
+
+    public void setComputerBool() {
+        if (!minigame_icon_pressed||(ComputerGameEMU.start_trigger&&minigame_icon_pressed)) { eventsValues[19].value = false; }
+        
+    }
+
+    public void setGoldenKeyBool() {
+        eventsValues[20].value = true;
+        goldenKey.SetActive(true);
     }
 
     IEnumerator playEvent() {
@@ -201,7 +224,48 @@ using System.Linq;
                 }
                 if (eventsValues[16].value && eventsValues[17].value && eventsValues[18].value) { bronzeKey.SetActive(true);StartCoroutine(playEvent()); }
                 break;
-                    default:break;
+            case ComputerInteract comp:if (!comp.Comp.value) { comp.Comp.value = true; minigame_panel.SetActive(true);player.Freeze(); } break;
+            case KeyInteract keyInt:
+                if (interactable.Interact.getBool().value)
+                {
+                    switch (keyInt.KeyType.Name)
+                    {
+                        case "Golden": goldenKey.SetActive(false); break;
+                        case "Silver": silverKey.SetActive(false); break;
+                        case "Bronze": bronzeKey.SetActive(false); break;
+                    }
+                    break;
+                }break;
+            case DoorInteract door:
+                if (!interactable.Interact.getBool().value)
+                {
+                    bool all = true;
+                    for (int i = 0; i < locks.Length; i++)
+                    {
+                        if (locks[i].activeSelf) { all = false; break; }
+                    }
+                    if (all) { door.Unlock.value = true; }
+                    else
+                    {
+                        SoundController.playSE(SE.CLICK);
+                        bool[] keys = new bool[3];
+                        keys[0] = eventsValues[23].value;
+                        keys[1] = eventsValues[24].value;
+                        keys[2] = eventsValues[25].value;
+                        for (int i = 0; i < keys.Length; i++)
+                        {
+                            if (keys[i]) { locks[i].SetActive(false); }
+                        }
+                    }
+                }
+                break;
+            case GiftInteract gift: if (!interactable.Interact.getBool().value) {
+                    gift.Gift.value=true;
+                    
+                    
+                    onGiftOpen.Raise();
+                }break;
+            default:break;
 
         }
             

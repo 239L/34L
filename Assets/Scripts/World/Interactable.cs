@@ -35,7 +35,7 @@ using UnityEngine;
         void Start()
         {
            
-            if (Type&&Type.Name!="Hide"&&Type.Name!="Face") onInteract.Raise(this);
+            //if (Type&&Type.Name!="Hide"&&Type.Name!="Face") onInteract.Raise(this);
             triggered = false;
 
         }
@@ -43,16 +43,11 @@ using UnityEngine;
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E) && triggered)
-            {
-                //if (!compareNumber || compareNumber.Number == number)
-                //{
-                    Debug.Log("Interact");
-                    Interact.Act();
-                    onInteract.Raise(this);
-                //}
-
-            }
+        if (triggered && ((Type.Name == "Face" || Type.Name == "RedButton")|| (Input.GetKeyDown(KeyCode.E) && (Type.Name != "Face" || Type.Name != "RedButton")))) {
+            Interact.Act();
+            onInteract.Raise(this);
+        }
+        
         }
 
 

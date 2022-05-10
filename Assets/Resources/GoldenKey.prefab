@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8293563696680529801, guid: 8c33fb22802fbde4bbd4b79a05bb48d5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,6 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd793d3d52b71a48b14b88e5c87af2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interact: {fileID: 11400000, guid: 4a9601222846d9c449823f10f54be899, type: 2}
+  type: {fileID: 11400000, guid: 07433685353b00547af7651718ab7676, type: 2}
+  number: 0
+  compareNumber: {fileID: 0}
+  onInteract: {fileID: 11400000, guid: b3283705e77d5e24bbc8e4336ffaaff8, type: 2}
 --- !u!61 &2753485641153855522
 BoxCollider2D:
   m_ObjectHideFlags: 0

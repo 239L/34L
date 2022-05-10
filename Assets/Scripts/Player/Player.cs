@@ -52,6 +52,12 @@ using UnityEngine;
 
         }
 
+    public void Freeze() {
+        cantMove = true;
+    }
+    public void Unfreeze() {
+        cantMove = false;
+    }
         void Flip() {
             dirRight = !dirRight;
             Vector3 Scale = transform.localScale;

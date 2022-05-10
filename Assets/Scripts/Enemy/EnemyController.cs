@@ -18,7 +18,10 @@ using Pathfinding;
         AIPath ai;
         [SerializeField]
         EnemyState state;
-        Vector3 PickRandomPoint()
+
+    [SerializeField] BoolEvent approach1;
+    [SerializeField] BoolEvent approach2;
+    Vector3 PickRandomPoint()
         {
             var point = Random.insideUnitSphere * ai.radius;
             point.y = 0;
@@ -114,30 +117,37 @@ using Pathfinding;
                 hit = Physics2D.Raycast(transform.parent.position, transform.parent.right, ai.radius);
                 if (hit && hit.collider.tag == "runTrack" && state.getState() != AIState.onTrack && state.getState() != AIState.pursuing)
                 {
-
-                    SoundController.playBGS(BGS.APPROACH2, true);
+                    approach1.Raise(true);
+                    approach2.Raise(false);
+                SoundController.playBGS(BGS.APPROACH2, true);
 
                     state.changeState(AIState.onTrack);
                 }
                 if (FindObjectOfType<RunTracks>() == null && state.getState() == AIState.onTrack)
                 {
+                approach1.Raise(false);
                     SoundController.stopBGS();
                     state.changeState(AIState.idle);
                 }
                 if (Vector2.Distance(transform.parent.position, player.position) > ai.radius && state.getState() != AIState.onTrack)
                 {
+                    approach2.Raise(false);
                     SoundController.stopBGS();
                     state.changeState(AIState.outofrange);
                 }
                 if (Vector2.Distance(transform.parent.position, player.position) <= ai.radius && state.getState() != AIState.pursuing)
                 {
                     SoundController.stopBGS();
+                    approach2.Raise(false);
+                    approach1.Raise(false);
                     state.changeState(AIState.noticed);
                     //
                 }
                 if (Vector2.Distance(transform.parent.position, player.position) > ai.radius * 5)
                 {
                     SoundController.stopBGS();
+                    approach2.Raise(false);
+                    approach1.Raise(false);
                     state.changeState(AIState.lost);
 
 
@@ -146,7 +156,8 @@ using Pathfinding;
                 if (state.getState() == AIState.noticed)
                 {
                     state.changeState(AIState.pursuing);
-
+                    approach1.Raise(false);
+                    approach2.Raise(true);
                     SoundController.playBGS(BGS.APPROACH1, true);
 
                 }
