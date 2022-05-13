@@ -11,7 +11,11 @@ using UnityEngine.UI;
         GameObject menuButtons;
         [SerializeField] ScriptableConfig sc;
 
-        public override void onClick()
+    private void Start()
+    {
+        sc = FindObjectOfType<ScriptableConfig>();
+    }
+    public override void onClick()
         {
             base.onClick();
 

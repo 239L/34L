@@ -26,7 +26,13 @@ using UnityEngine;
             }
             if (ScriptableConfig.Instance == null) {
                 Instantiate(Resources.Load("ConfigData"));
+            
             }
+            if (LoaderController.instance == null) {
+                Instantiate(Resources.Load("Loader"));
+            Debug.Log("Loader added!");
+        }
+
         }
         // Start is called before the first frame update
         void Start()

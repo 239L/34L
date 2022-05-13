@@ -5,11 +5,11 @@ using UnityEngine;
     public class ScriptableConfig : MonoBehaviour
     {
         private static ScriptableConfig instance;
-        public static ScriptableConfig Instance { get; }
+        public static ScriptableConfig Instance { get=>instance; }
 
         private void Awake()
         {
-            if (instance == null) { instance = this; } else { Destroy(this); }
+            if (instance == null) { instance = this;  } else { Destroy(this); }
             DontDestroyOnLoad(this);
             loadConfig(SaveSystem.LoadConfigData());
         }

@@ -14,10 +14,26 @@ using UnityEngine.SceneManagement;
 
         [SerializeField] IntEvent intEvent;
         public static SceneController instance;
+
+        [SerializeField]
+        GameObject loader;
+        
+        [SerializeField] VoidEvent fadeOut;
+        [SerializeField] VoidEvent fadeIn;
         // Start is called before the first frame update
         void Start()
         {
+            findLoader();
             handleBGM();
+        }
+
+        void findLoader() {
+        if (loader == null) {
+            if (GameObject.FindGameObjectWithTag("Loader"))
+            {
+                loader = GameObject.FindGameObjectWithTag("Loader");
+            }
+        }
         }
         private void Awake()
         {
@@ -46,22 +62,34 @@ using UnityEngine.SceneManagement;
 
         public void LoadScene(int index) {
 
+        if (index == (int)SceneIndexes.GAME)
+        {
             intEvent.Raise(index);
+        }
+            findLoader();
+            loader.SetActive(true);
+            fadeOut.Raise();
             StartCoroutine(LoadAsyncScene(index));
         }
         IEnumerator LoadAsyncScene(int index)
         {
-
-
+        
+            Debug.Log("Not Loaded");
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
 
             // Wait until the asynchronous scene fully loads
             while (!asyncLoad.isDone)
             {
+             
                 yield return null;
             }
+            loader.SetActive(true);
             LocalizationController.Instance.getLocalizedItems();
             handleBGM();
-            
-        }
+            fadeIn.Raise();
+            Debug.Log("Loaded scene");
+
+    }
+
+   
     }
