@@ -87,6 +87,30 @@
         {
             "key": "BackToMain",
             "value": "В главное меню"
+        },
+        {
+            "key": "Dialogue1",
+            "value": "Эй, Шерон!"
+        },
+        {
+            "key": "Dialogue2",
+            "value": "А?"
+        },
+        {
+            "key": "Dialogue3",
+            "value": "Ты идешь? Мы тебя заждались!"
+        },
+        {
+            "key": "Dialogue4",
+            "value": "Там будет Неро?"
+        },
+        {
+            "key": "Dialogue5",
+            "value": "Да."
+        },
+        {
+            "key": "Dialogue6",
+            "value": "Я не пойду."
         }
     ]
 }

@@ -87,6 +87,30 @@
         {
             "key": "BackToMain",
             "value": "Volver al menú principal"
+        },
+        {
+            "key": "Dialogue1",
+            "value": "Hey Sharon!"
+        },
+        {
+            "key": "Dialogue2",
+            "value": "Oh?"
+        },
+        {
+            "key": "Dialogue3",
+            "value": "Are you coming with? We've been waiting for you!"
+        },
+        {
+            "key": "Dialogue4",
+            "value": "Will Nero be there?"
+        },
+        {
+            "key": "Dialogue5",
+            "value": "Yes."
+        },
+        {
+            "key": "Dialogue6",
+            "value": "I'm not coming."
         }
     ]
 }

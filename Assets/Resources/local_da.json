@@ -87,6 +87,30 @@
         {
             "key": "BackToMain",
             "value": "Tilbage til hovedmenuen"
+        },
+        {
+            "key": "Dialogue1",
+            "value": "Hej Sharon!"
+        },
+        {
+            "key": "Dialogue2",
+            "value": "Åh?"
+        },
+        {
+            "key": "Dialogue3",
+            "value": "Skal du med? Vi har ventet på dig!"
+        },
+        {
+            "key": "Dialogue4",
+            "value": "Tager Nero derhen?"
+        },
+        {
+            "key": "Dialogue5",
+            "value": "Ja."
+        },
+        {
+            "key": "Dialogue6",
+            "value": "Jeg kommer ikke."
         }
     ]
 }
