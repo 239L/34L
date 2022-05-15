@@ -18,7 +18,9 @@ public class BackToMainMenuTrigger : MonoBehaviour
     void Update()
     {
         if (Input.anyKey&&toLeave) {
+            toLeave = false; 
             SceneController.instance.LoadScene((int)SceneIndexes.MENU);
+            
         }
     }
 }

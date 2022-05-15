@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
     public enum SceneIndexes {
         MENU = 0,
-        GAME = 1
+        GAME = 1,
+        GAMEOVER=2,
+        ENDING=3
     }
     public class SceneController : MonoBehaviour
     {
@@ -55,8 +57,15 @@ using UnityEngine.SceneManagement;
             {
                 case 0:
                     SoundController.stopBGM();
+                    SoundController.stopBGS();
                     SoundController.playBGM(BGM.MENU, true); break;
-                default: SoundController.stopBGM(); SoundController.playBGM(BGM.INGAME, true); break;
+                case 2: SoundController.stopBGS(); SoundController.stopBGM(); SoundController.playBGM(BGM.GAMEOVER,false); break;
+                case 3:
+                SoundController.stopBGM();
+                SoundController.stopBGS();
+                SoundController.playBGM(BGM.END,true);
+                break;
+            default: SoundController.stopBGS(); SoundController.stopBGM(); SoundController.playBGM(BGM.INGAME, true); break;
             }
         }
 

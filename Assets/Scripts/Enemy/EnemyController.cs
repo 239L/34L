@@ -32,7 +32,7 @@ using Pathfinding;
         Vector3 PickPointNearPlayer() {
             var point = Random.insideUnitSphere * ai.radius*3;
             point.y = 0;
-            point +=player.transform.position/1.2f;
+            point +=player.transform.position/1.5f;
             return point;
         }
         bool collided = false;
@@ -41,7 +41,9 @@ using Pathfinding;
         [SerializeField]
         AIDestinationSetter targetSetter;
 
-        
+        bool approached = false;
+
+        bool playerDead = false;
         
         float pos = 0.0f;
         bool dirRight = true;
@@ -111,57 +113,65 @@ using Pathfinding;
 
         void setState()
         {
-            if (!FindObjectOfType<Player>().cantMove)
+        if (!FindObjectOfType<Player>().cantMove)
+        {
+            if (ai.isStopped && state.getState() != AIState.onTrack && state.getState() != AIState.pursuing) { SoundController.stopBGS(); state.changeState(AIState.idle); }
+            hit = Physics2D.Raycast(transform.parent.position, transform.parent.right, ai.radius);
+            if (hit && hit.collider.tag == "runTrack" && state.getState() != AIState.onTrack && state.getState() != AIState.pursuing)
             {
-                if (ai.isStopped && state.getState() != AIState.onTrack && state.getState() != AIState.pursuing) { SoundController.stopBGS(); state.changeState(AIState.idle); }
-                hit = Physics2D.Raycast(transform.parent.position, transform.parent.right, ai.radius);
-                if (hit && hit.collider.tag == "runTrack" && state.getState() != AIState.onTrack && state.getState() != AIState.pursuing)
-                {
-                    approach1.Raise(true);
-                    approach2.Raise(false);
+                approach1.Raise(true);
+                approach2.Raise(false);
                 SoundController.playBGS(BGS.APPROACH2, true);
 
-                    state.changeState(AIState.onTrack);
-                }
-                if (FindObjectOfType<RunTracks>() == null && state.getState() == AIState.onTrack)
-                {
-                approach1.Raise(false);
-                    SoundController.stopBGS();
-                    state.changeState(AIState.idle);
-                }
-                if (Vector2.Distance(transform.parent.position, player.position) > ai.radius && state.getState() != AIState.onTrack)
-                {
-                    approach2.Raise(false);
-                    SoundController.stopBGS();
-                    state.changeState(AIState.outofrange);
-                }
-                if (Vector2.Distance(transform.parent.position, player.position) <= ai.radius && state.getState() != AIState.pursuing)
-                {
-                    SoundController.stopBGS();
-                    approach2.Raise(false);
-                    approach1.Raise(false);
-                    state.changeState(AIState.noticed);
-                    //
-                }
-                if (Vector2.Distance(transform.parent.position, player.position) > ai.radius * 5)
-                {
-                    SoundController.stopBGS();
-                    approach2.Raise(false);
-                    approach1.Raise(false);
-                    state.changeState(AIState.lost);
-
-
-                }
-
-                if (state.getState() == AIState.noticed)
-                {
-                    state.changeState(AIState.pursuing);
-                    approach1.Raise(false);
-                    approach2.Raise(true);
-                    SoundController.playBGS(BGS.APPROACH1, true);
-
-                }
+                state.changeState(AIState.onTrack);
             }
+            if (FindObjectOfType<RunTracks>() == null && state.getState() == AIState.onTrack)
+            {
+                approach1.Raise(false);
+                SoundController.stopBGS();
+                state.changeState(AIState.idle);
+            }
+            if (Vector2.Distance(transform.parent.position, player.position) > ai.radius && state.getState() != AIState.onTrack)
+            {
+                approach2.Raise(false);
+                SoundController.stopBGS();
+                state.changeState(AIState.outofrange);
+            }
+            if (Vector2.Distance(transform.parent.position, player.position) <= ai.radius && state.getState() != AIState.pursuing)
+            {
+                SoundController.stopBGS();
+                approach2.Raise(false);
+                approach1.Raise(false);
+                state.changeState(AIState.noticed);
+                //
+            }
+            if (Vector2.Distance(transform.parent.position, player.position) > ai.radius * 6 && approached)
+            {
+                SoundController.stopBGS();
+                approach2.Raise(false);
+                approach1.Raise(false);
+                state.changeState(AIState.lost);
+
+
+            }
+
+            if (state.getState() == AIState.noticed)
+            {
+                state.changeState(AIState.pursuing);
+                approach1.Raise(false);
+                approach2.Raise(true);
+                SoundController.playBGS(BGS.APPROACH1, true);
+
+            }
+            if (Vector2.Distance(transform.parent.position, player.position) <= ai.radius * 4)
+            {
+                approached = true; //не дает врагу сразу телепортироваться к игроку
+            }
+            if (ai.reachedEndOfPath&&targetSetter.enabled&&!playerDead) {
+                SoundController.stopBGS();
+                playerDead = true;
+                SceneController.instance.LoadScene((int)SceneIndexes.GAMEOVER); }
+        }
             
         }
 
@@ -188,7 +198,7 @@ using Pathfinding;
                     }
                     
                     break;
-                case AIState.pursuing: targetSetter.enabled = true; if (durationOfPursuing > 3f&&tempSpeed<5f) { tempSpeed += 0.1f; } durationOfPursuing += Time.deltaTime;break;
+                case AIState.pursuing: targetSetter.enabled = true; if (durationOfPursuing > 1.5f&&tempSpeed<5f) { tempSpeed += 0.1f; } durationOfPursuing += Time.deltaTime;break;
                 case AIState.onTrack:
                     
                     returnSpeed();

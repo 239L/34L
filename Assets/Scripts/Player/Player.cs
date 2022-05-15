@@ -22,9 +22,9 @@ using UnityEngine;
         bool dirRight = false;
         [SerializeField]
         AnimController anim;
-
-        public bool cantMove = false;
-
+    float falling_time = 1f;
+    public bool cantMove = false;
+        
         [SerializeField]
         GameObject runTrack;
         [SerializeField]
@@ -64,7 +64,8 @@ using UnityEngine;
             Scale.x *= -1;
             transform.localScale = Scale;
         }
-
+        
+        
         void Move() {
             if(!cantMove)
             rb.MovePosition(rb.position + movement * speed.value * Time.fixedDeltaTime);
@@ -79,6 +80,28 @@ using UnityEngine;
 
         }
 
+        public  void Fall() {
+
+        StartCoroutine(Falling());
+        //SceneController.instance.LoadScene((int)SceneIndexes.GAMEOVER);
+        }
+
+    IEnumerator Falling() {
+        SoundController.playME(ME.EFFECT2);
+        while (falling_time > 0)
+        {
+           
+            falling_time -= Time.deltaTime;
+            Vector2 vec = new Vector2(transform.position.x, transform.position.y - 0.1f);
+            Quaternion q = transform.rotation;
+            q.z -= 0.1f;
+            transform.rotation = q;
+            transform.position = vec;
+            yield return null;
+        }
+        SceneController.instance.LoadScene((int)SceneIndexes.GAMEOVER);
+    }
+        
         void manageState() {
             switch (playerState.getState()) {
                 case State.move: anim.setAnim("speed", movement.sqrMagnitude); break;

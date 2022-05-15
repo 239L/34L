@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a5e573cd43ae34bae8257973ab1cdc, type: 3}
-  m_Name: GoldenKeyTaken
+  m_Script: {fileID: 11500000, guid: bd569d1307a1c5740a316a0c756bea4c, type: 3}
+  m_Name: Mimic
   m_EditorClassIdentifier: 
-  value: 1
+  enumName: Mimic

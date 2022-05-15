@@ -8,6 +8,8 @@ using System.Linq;
         public static EventsController instance;
 
         [SerializeField]
+        private ScriptableGameData sc;
+        [SerializeField]
         private VoidEvent onWireCut;
         [SerializeField]
         private VoidEvent onButtonPressed;
@@ -53,7 +55,8 @@ using System.Linq;
             { instance = this; }
             else Destroy(gameObject);
 
-            DontDestroyOnLoad(gameObject);
+            
+            if(!sc)sc = GetComponent<ScriptableGameData>();
         
            
         }
@@ -170,7 +173,7 @@ using System.Linq;
                         {
                             a = new Color(1f, 1f, 1f, 1f);
                         }
-                        else { a = new Color(1f, 1f, 1f, 0f); }
+                        else { a = new Color(1f, 1f, 1f, 0f); SaveSystem.SaveGameData(sc); }
                          
                          StartCoroutine(waitForTheClosetToOpen(a));
                         }
@@ -244,7 +247,7 @@ using System.Linq;
                     {
                         if (locks[i].activeSelf) { all = false; break; }
                     }
-                    if (all) { door.Unlock.value = true; }
+                    if (all) { door.Unlock.value = true; player.cantMove = true; SceneController.instance.LoadScene((int)SceneIndexes.ENDING); }
                     else
                     {
                         SoundController.playSE(SE.CLICK);
@@ -258,12 +261,27 @@ using System.Linq;
                         }
                     }
                 }
+                
                 break;
             case GiftInteract gift: if (!interactable.Interact.getBool().value) {
                     gift.Gift.value=true;
                     
                     
                     onGiftOpen.Raise();
+                }break;
+            case AbyssInteract abyss:
+                if (interactable.Interact.getBool().value) {
+                    player.cantMove = true;
+                    interactable.enabled = false;
+                    player.Fall();
+
+                }
+                break;
+            case MimicInteract mimic:
+                if (interactable.Interact.getBool().value) {
+                    SoundController.playME(ME.SLICE);
+                    SceneController.instance.LoadScene((int)SceneIndexes.GAMEOVER);
+                    interactable.enabled = false;
                 }break;
             default:break;
 

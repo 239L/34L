@@ -43,9 +43,13 @@ using UnityEngine;
         // Update is called once per frame
         void Update()
         {
-        if (triggered && ((Type.Name == "Face" || Type.Name == "RedButton")|| (Input.GetKeyDown(KeyCode.E) && (Type.Name != "Face" || Type.Name != "RedButton")))) {
-            Interact.Act();
-            onInteract.Raise(this);
+        if (Type)
+        {
+            if (triggered && ((Type.Name == "Face" || Type.Name == "RedButton"||Type.Name=="Abyss"||Type.Name=="Mimic") || (Input.GetKeyDown(KeyCode.E) && (Type.Name != "Face" || Type.Name != "RedButton"))))
+            {
+                Interact.Act();
+                onInteract.Raise(this);
+            }
         }
         
         }

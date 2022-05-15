@@ -18,7 +18,9 @@ using System.Linq;
     public enum BGM
     {
         INGAME = 0,
-        MENU = 1
+        MENU = 1,
+        END=2,
+        GAMEOVER=3
     }
 
     public enum BGS
@@ -34,7 +36,9 @@ using System.Linq;
         BELL3 = 2,
         DRILL = 3,
         EFFECT2 = 4,
-        EVENT = 5
+        EVENT = 5,
+        GAMEOVER=6,
+        SLICE=7
     }
     public static class SoundController
     {
