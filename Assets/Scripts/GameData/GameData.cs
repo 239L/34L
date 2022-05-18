@@ -47,7 +47,7 @@ public class GameData
         goldenkeyTaken = sc.EventValues[22].value;
         bronzekeyTaken = sc.EventValues[23].value;
         silverkeyTaken = sc.EventValues[24].value;
-        door_unlocked = sc.EventValues[25].value;
+        door_unlocked = false;
         abyss = false;
         mimic = false;
     }

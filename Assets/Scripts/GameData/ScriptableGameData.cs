@@ -6,7 +6,7 @@ public class ScriptableGameData : MonoBehaviour
 {
     private static ScriptableGameData instance;
     public static ScriptableGameData Instance { get => instance; }
-    void Start()
+    void Awake()
     {
         if (instance == null) { instance = this; }
         DontDestroyOnLoad(this);

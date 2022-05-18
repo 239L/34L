@@ -4,8 +4,7 @@ using UnityEngine;
 
     public class Interactable : MonoBehaviour
     {
-        bool isTriggered = false;
-        bool Finished = false;
+        public bool started = true;
         [SerializeField]
         Interact interact;
         public Interact Interact { get => interact; set => interact = value; }
@@ -22,6 +21,7 @@ using UnityEngine;
         [SerializeField] InteractingNumber compareNumber;
         
 
+        
         [SerializeField]
         InteractableEvent onInteract;
 
@@ -34,8 +34,10 @@ using UnityEngine;
         // Start is called before the first frame update
         void Start()
         {
+            
+            onInteract.Raise(this);
+            started = false;
            
-            //if (Type&&Type.Name!="Hide"&&Type.Name!="Face") onInteract.Raise(this);
             triggered = false;
 
         }
@@ -43,7 +45,7 @@ using UnityEngine;
         // Update is called once per frame
         void Update()
         {
-        if (Type)
+        if (Type&&!Pause.isPaused)
         {
             if (triggered && ((Type.Name == "Face" || Type.Name == "RedButton"||Type.Name=="Abyss"||Type.Name=="Mimic") || (Input.GetKeyDown(KeyCode.E) && (Type.Name != "Face" || Type.Name != "RedButton"))))
             {

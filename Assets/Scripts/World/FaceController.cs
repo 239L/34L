@@ -11,6 +11,8 @@ public class FaceController : MonoBehaviour, IAnimator
     [SerializeField] int number;
     [SerializeField] FaceInteract interact;
 
+    [SerializeField] Interactable interactable;
+
     public static bool animIsFinished = true;
     public void playAnimation()
     {
@@ -30,7 +32,7 @@ public class FaceController : MonoBehaviour, IAnimator
             wait = false;
             set = true;
             wrong = false;
-            SoundController.playME(ME.BELL1);
+            if (!interactable.started) { SoundController.playME(ME.BELL1); }
             playAnimation();
         }
     }
@@ -47,7 +49,10 @@ public class FaceController : MonoBehaviour, IAnimator
 
     public void toWrong()
     {
-        SoundController.playME(ME.BELL3);
+        if (!interactable.started)
+        {
+            SoundController.playME(ME.BELL3);
+        }
         wait = false;
             set = false;
             wrong = true;

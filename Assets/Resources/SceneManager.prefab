@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prevScene: {fileID: 11400000, guid: 8a662b91ff4a58945b9356767b4738be, type: 2}
   intEvent: {fileID: 11400000, guid: 8663f10237c76c548bbe2113eb0f6883, type: 2}
+  saveExists: {fileID: 11400000, guid: 478f9be188c794b479b57fb425fa3416, type: 2}
   loader: {fileID: 0}
   fadeOut: {fileID: 11400000, guid: 1fbe64907400a9c44bef4decc76e9915, type: 2}
   fadeIn: {fileID: 11400000, guid: 753cbeac9c3880d4b8c24351bd137f05, type: 2}

@@ -33,7 +33,7 @@ using System.Linq;
 
         [SerializeField]GameObject[] locks;
 
-        
+    [SerializeField] GameObject obstacle;
         [SerializeField]
         GameObject yellowGem;
         [SerializeField]
@@ -60,10 +60,11 @@ using System.Linq;
         
            
         }
-        void Start()
-        {
+    void Start()
+    {
+       
         
-        }
+    }
     void Update()
     {
         
@@ -116,85 +117,102 @@ using System.Linq;
         public void playEvent(Interactable interactable)
         {
 
-            
-                switch (interactable.Interact)
-                {
 
-                    case AxeInteract axe:
-                        if (interactable.Interact.getBool().value)
+        switch (interactable.Interact)
+        {
+
+            case AxeInteract axe:
+                if (interactable.Interact.getBool().value)
+                {
+                    Destroy(interactable.gameObject);
+
+                }
+                break;
+            case WireInteract wires:
+                if (interactable.Interact.getBool().value)
+                {
+                    if (eventsValues[0].value) //AxeTouched
+                    {
+                        int size = interactable.transform.childCount;
+                        if (size == 1)
                         {
                             Destroy(interactable.gameObject);
-
                         }
-                        break;
-                    case WireInteract wires:
-                        if (interactable.Interact.getBool().value)
+                        else
                         {
-                            if (eventsValues[0].value) //AxeTouched
+                            for (int i = size - 1; i >= 0; i--)
                             {
-                                int size = interactable.transform.childCount;
-                                if (size == 1)
-                                {
-                                    Destroy(interactable.gameObject);
-                                }
-                                else
-                                {
-                                    for (int i = size - 1; i >= 0; i--)
-                                    {
-                                        if (i != 0 && i != size - 1) { Destroy(interactable.GetComponentInChildren<Transform>().GetChild(i).gameObject); }
+                                if (i != 0 && i != size - 1) { Destroy(interactable.GetComponentInChildren<Transform>().GetChild(i).gameObject); }
 
-                                    }
-                                }
-                                currentInteractable = interactable;
-                                onWireCut.Raise();
                             }
-                            else { interactable.Interact.setBool(false); }
                         }
-                        break;
-                    case RedButtonInteract red:
-                        if (interactable.Interact.getBool().value)
-                        {
-                            onButtonPressed.Raise();
-                        }
-                        break;
-                        
-                    case HidingSpotInteract hd:
-                        Debug.Log(toPerform);
                         currentInteractable = interactable;
-                        hideEvent.Raise(interactable.Interact.getBool().value);
-                        if (toPerform)
-                        {
-                    
-                    player.cantMove = interactable.Interact.getBool().value;
+                        onWireCut.Raise();
+                    }
+                    else { interactable.Interact.setBool(false); }
+                }
+                break;
+            case RedButtonInteract red:
+                if (interactable.Interact.getBool().value)
+                {
+                    if (!interactable.started)
+                        onButtonPressed.Raise();
+                    else
+                    {
+                        obstacle.SetActive(false);
+                    }
+                }
+                
+                break;
+
+            case HidingSpotInteract hd:
+                if (!interactable.started)
+                {
+                    Debug.Log(toPerform);
+                    currentInteractable = interactable;
+                    hideEvent.Raise(interactable.Interact.getBool().value);
+                    if (toPerform)
+                    {
+
+                        player.cantMove = interactable.Interact.getBool().value;
                         Debug.Log(player.cantMove);
                         Color a;
-                        
+
                         if (!player.cantMove)
                         {
                             a = new Color(1f, 1f, 1f, 1f);
                         }
                         else { a = new Color(1f, 1f, 1f, 0f); SaveSystem.SaveGameData(sc); }
-                         
-                         StartCoroutine(waitForTheClosetToOpen(a));
-                        }
-                        break;
-                    case BoxInteract box:
-                        if (eventsValues[7].value && eventsValues[8].value && eventsValues[9].value && eventsValues[10].value && !boxes)
-                        {
-                            
-                            yellowGem.SetActive(true);
-                            boxes = true;
-                            StartCoroutine(playEvent());
 
-                        }break;
-                    case FaceInteract face: currentInteractable = interactable;
+                        StartCoroutine(waitForTheClosetToOpen(a));
+                    }
+                }
+                break;
+            case BoxInteract box:
+
+                if (eventsValues[7].value && eventsValues[8].value && eventsValues[9].value && eventsValues[10].value && !boxes)
+                {
+
+                    
+                    boxes = true;
+                    yellowGem.SetActive(true);
+                    if (interactable.started)
+                    {
+                        if (!eventsValues[18].value) { eventsValues[18].value = true; }
+                    }
+                    else { StartCoroutine(playEvent()); }
+
+
+                } break;
+            case FaceInteract face: currentInteractable = interactable;
                 if (FaceController.animIsFinished)
                 {
-                    if (!face.FaceOn.value && !faces)
+                    if(interactable.started && face.FaceOn.value){ Debug.Log("SetFAce"); onSet.Raise();break; }
+                    if (!face.FaceOn.value && !faces&&!interactable.started)
                     {
                         switch (face.Number)
                         {
-                            case 5: if (face.Faces.Where(e => e.value == true).Count() <= 0) { face.FaceOn.value = true; onSet.Raise(); } else { nullifyFaces();  onWrong.Raise(); } break;
+                            case 5: if (face.Faces.Where(e => e.value == true).Count() <= 0) { face.FaceOn.value = true; onSet.Raise(); } else { nullifyFaces(); onWrong.Raise(); } break;
                             case 1:
                             case 2:
                             case 3:
@@ -202,32 +220,45 @@ using System.Linq;
                             default:
                                 if (face.Faces.Where(e => e.value == true).Count() == face.Faces.Length)
                                 {
-                                    face.FaceOn.value = true;onSet.Raise();
+                                    face.FaceOn.value = true; onSet.Raise();
                                 }
-                                else { nullifyFaces();  onWrong.Raise(); }
+                                else { nullifyFaces(); onWrong.Raise(); }
                                 break;
 
                         }
                     }
-                    
+
                 }
                 if (!faces && eventsValues[11].value && eventsValues[12].value && eventsValues[13].value && eventsValues[14].value && eventsValues[15].value)
-                    {
-                        
-                        faces = true;
-                    redGem.SetActive(true);
-                        StartCoroutine(playEvent());
-                    }
+                {
+
+                    faces = true;
+                    
+                    if (!interactable.started) { if(!eventsValues[17].value){
+                            redGem.SetActive(true);
+                        } 
+                        StartCoroutine(playEvent()); }
+                }
                 break;
             case GemInteract gem:
+                
+
                 if (interactable.Interact.getBool().value)
                 {
-                    SoundController.playSE(SE.CLICK);
+                    if (!interactable.started) { SoundController.playSE(SE.CLICK); }
                     onGemTaking.Raise();
                 }
-                if (eventsValues[16].value && eventsValues[17].value && eventsValues[18].value) { bronzeKey.SetActive(true);StartCoroutine(playEvent()); }
+                
+                if (eventsValues[16].value && eventsValues[17].value && eventsValues[18].value&&!eventsValues[24].value) { bronzeKey.SetActive(true);StartCoroutine(playEvent()); }
                 break;
-            case ComputerInteract comp:if (!comp.Comp.value) { comp.Comp.value = true; minigame_panel.SetActive(true);player.Freeze(); } break;
+            case ComputerInteract comp:
+                if (interactable.started) {
+                    if (eventsValues[19].value == true&& eventsValues[20].value != true) {
+                        eventsValues[20].value = true; goldenKey.SetActive(true);
+                    }
+                    break;
+                }
+                if (!comp.Comp.value) { comp.Comp.value = true; minigame_panel.SetActive(true); player.Freeze();  }  break;
             case KeyInteract keyInt:
                 if (interactable.Interact.getBool().value)
                 {
@@ -240,6 +271,7 @@ using System.Linq;
                     break;
                 }break;
             case DoorInteract door:
+                if (interactable.started) { break; }
                 if (!interactable.Interact.getBool().value)
                 {
                     bool all = true;
@@ -263,13 +295,19 @@ using System.Linq;
                 }
                 
                 break;
-            case GiftInteract gift: if (!interactable.Interact.getBool().value) {
+            case GiftInteract gift:
+                if (interactable.started) {
+                    if (interactable.Interact.getBool().value)
+                    { onGiftOpen.Raise(); }
+                    break; }
+                if (!interactable.Interact.getBool().value) {
                     gift.Gift.value=true;
                     
                     
                     onGiftOpen.Raise();
                 }break;
             case AbyssInteract abyss:
+                if (interactable.started) { break; }
                 if (interactable.Interact.getBool().value) {
                     player.cantMove = true;
                     interactable.enabled = false;
@@ -278,6 +316,7 @@ using System.Linq;
                 }
                 break;
             case MimicInteract mimic:
+                if (interactable.started) { break; }
                 if (interactable.Interact.getBool().value) {
                     SoundController.playME(ME.SLICE);
                     SceneController.instance.LoadScene((int)SceneIndexes.GAMEOVER);

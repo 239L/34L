@@ -15,6 +15,7 @@ using UnityEngine.SceneManagement;
         private IntValue prevScene;
 
         [SerializeField] IntEvent intEvent;
+        [SerializeField] VoidEvent saveExists;
         public static SceneController instance;
 
         [SerializeField]
@@ -25,10 +26,17 @@ using UnityEngine.SceneManagement;
         // Start is called before the first frame update
         void Start()
         {
+        continueButtonCheck();
             findLoader();
             handleBGM();
         }
 
+        void continueButtonCheck() {
+        if (SaveSystem.gameDataExists())
+        {
+            saveExists.Raise();
+        }
+        }
         void findLoader() {
         if (loader == null) {
             if (GameObject.FindGameObjectWithTag("Loader"))
@@ -56,6 +64,7 @@ using UnityEngine.SceneManagement;
             switch (SceneManager.GetActiveScene().buildIndex)
             {
                 case 0:
+                    continueButtonCheck();
                     SoundController.stopBGM();
                     SoundController.stopBGS();
                     SoundController.playBGM(BGM.MENU, true); break;

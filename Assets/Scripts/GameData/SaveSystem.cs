@@ -39,7 +39,9 @@ using UnityEngine;
             }
             catch (Exception e) { Debug.LogError(e); }
         }
-
+        public static bool gameDataExists() {
+        return File.Exists(Application.persistentDataPath + "/gameData.nero");
+        }
         public static void deleteGameData() {
         string path = Application.persistentDataPath + "/gameData.nero";
         if (File.Exists(path))

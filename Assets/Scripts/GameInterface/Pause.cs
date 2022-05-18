@@ -6,6 +6,8 @@ using UnityEngine;
     {
         public static bool canPause = true;
         public static bool isPaused = false;
+
+    [SerializeField] GameObject computer;
         [SerializeField]
         GameObject menuPanel;
 
@@ -23,7 +25,7 @@ using UnityEngine;
         // Update is called once per frame
         void Update()
         {
-            if (canPause)
+            if (canPause&&!computer.activeSelf)
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {

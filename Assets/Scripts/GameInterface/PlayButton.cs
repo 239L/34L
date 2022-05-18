@@ -19,6 +19,7 @@ using UnityEngine;
         {
 
             base.onClick();
+            SaveSystem.deleteGameData();
             setScene();
         }
         override public void setScene()

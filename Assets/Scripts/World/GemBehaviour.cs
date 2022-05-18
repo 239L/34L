@@ -8,6 +8,7 @@ public class GemBehaviour : MonoBehaviour
     GameObject slot;
     [SerializeField]
     GemInteract interact;
+    [SerializeField] Interactable interactable;
     public void placeInTheSlot() {
         if (interact.getBool().value)
         {
